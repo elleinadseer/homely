@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import '/Users/danielle/bootcamp/react-portfolio-w20/src/styles/all.css';
+import '../../index.css';
 
 // Here we import a helper function that will check if the email is valid
-import { validateEmail } from '../utils/helpers';
+import { validateEmail } from '../../utils/helpers';
 
 function Form() {
   // Create state variables for the fields in the form

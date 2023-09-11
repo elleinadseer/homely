@@ -1,14 +1,5 @@
 import React from 'react';
 
-function updateProximity() {
-  const proximityValue = document.getElementById('proximity-input').value;
-  const proximityIcon = document.getElementById('proximity-icon');
-
-  const newSize = Math.min(100, proximityValue) + 'px';
-  proximityIcon.style.width = newSize;
-  proximityIcon.style.height = newSize;
-}
-
 export default function AboutMe() {
   return (
     <div>
