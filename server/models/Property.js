@@ -43,14 +43,6 @@ const propertySchema = new Schema({
     type: Boolean,
     required: true,
   },
-  sqft: {
-    type: Number,
-    required: true,
-  },
-  yearBuilt: {
-    type: Number,
-    required: true,
-  },
   dateListed: {
     type: Date,
     default: Date.now,
