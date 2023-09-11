@@ -1,0 +1,150 @@
+const { AuthenticationError } = require('apollo-server-express')
+const { User, Property, PropertyType, Image } = require('../models')
+const { signToken } = require('../utils/auth')
+
+const resolvers = {
+  Query: {
+    me: async (_, __, { user }) => {
+      if (user) {
+        // If a user is authenticated, return their profile
+        return user
+      }
+      throw new AuthenticationError('Not logged in')
+    },
+
+    users: async () => {
+      return User.find()
+    },
+
+    user: async (_, { username }) => {
+      const user = await User.findOne({ username })
+      if (!user) {
+        throw new Error('User not found')
+      }
+      return user
+    },
+
+    properties: async () => {
+      return Property.find()
+    },
+
+    property: async (_, { _id }) => {
+      const property = await Property.findById(_id)
+      if (!property) {
+        throw new Error('Property not found')
+      }
+      return property
+    },
+
+    propertyTypes: async () => {
+      return PropertyType.find()
+    },
+
+    propertyType: async (_, { _id }) => {
+      const propertyType = await PropertyType.findById(_id)
+      if (!propertyType) {
+        throw new Error('PropertyType not found')
+      }
+      return propertyType
+    },
+
+    images: async () => {
+      return Image.find()
+    },
+
+    image: async (_, { _id }) => {
+      const image = await Image.findById(_id)
+      if (!image) {
+        throw new Error('Image not found')
+      }
+      return image
+    },
+  },
+
+  Mutation: {
+    login: async (_, { email, password }) => {
+      const user = await User.findOne({ email })
+
+      if (!user) {
+        throw new AuthenticationError('Incorrect email or password')
+      }
+
+      const correctPassword = await user.isCorrectPassword(password)
+
+      if (!correctPassword) {
+        throw new AuthenticationError('Incorrect email or password')
+      }
+
+      const token = signToken(user)
+
+      return { token, user }
+    },
+
+    addUser: async (_, args) => {
+      const user = await User.create(args)
+      const token = signToken(user)
+
+      return { token, user }
+    },
+
+    addProperty: async (_, args) => {
+      const property = await Property.create(args.input)
+      return property
+    },
+
+    removeProperty: async (_, { propertyId }) => {
+      const property = await Property.findByIdAndRemove(propertyId)
+      return property
+    },
+
+    savePropertyToUser: async (_, { propertyId }, { user }) => {
+      if (user) {
+        const updatedUser = await User.findByIdAndUpdate(
+          { _id: user._id },
+          { $addToSet: { savedProperties: propertyId } },
+          { new: true, runValidators: true }
+        )
+        return updatedUser
+      }
+      throw new AuthenticationError('You need to be logged in!')
+    },
+
+    removePropertyFromUser: async (_, { propertyId }, { user }) => {
+      if (user) {
+        const updatedUser = await User.findByIdAndUpdate(
+          { _id: user._id },
+          { $pull: { savedProperties: propertyId } },
+          { new: true }
+        )
+        return updatedUser
+      }
+      throw new AuthenticationError('You need to be logged in!')
+    },
+
+    addPropertyType: async (_, { name }) => {
+      // Create a new property type
+      const propertyType = await PropertyType.create({ name })
+      return propertyType
+    },
+
+    removePropertyType: async (_, { propertyTypeId }) => {
+      // Remove a property type
+      const propertyType = await PropertyType.findByIdAndRemove(propertyTypeId)
+      return propertyType
+    },
+
+    addImage: async (_, url) => {
+      // Create a new image
+      const image = await Image.create(url)
+      return image
+    },
+
+    removeImage: async (_, { imageId }) => {
+      // Remove an image
+      const image = await Image.findByIdAndRemove(imageId)
+      return image
+    },
+  },
+}
+
+module.exports = resolvers
