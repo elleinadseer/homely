@@ -22,8 +22,6 @@ const typeDefs = gql`
     beds: Int
     baths: Int
     pets: Boolean
-    sqft: Int
-    yearBuilt: Int
     dateListed: String
     propertyType: PropertyType
     description: String
@@ -41,8 +39,6 @@ const typeDefs = gql`
     beds: Int
     baths: Int
     pets: Boolean
-    sqft: Int
-    yearBuilt: Int
     dateListed: String
     propertyType: ID
     description: String
