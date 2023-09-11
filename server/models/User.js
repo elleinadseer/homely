@@ -2,7 +2,6 @@ const mongoose = require('mongoose')
 
 const { Schema } = mongoose
 const bcrypt = require('bcrypt')
-const propertySchema = require('./Property')
 
 const userSchema = new Schema(
   {
