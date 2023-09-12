@@ -1,0 +1,99 @@
+* {  margin: 0px; 
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: bold
+  }
+  
+    input, textarea {
+      background-color: white;
+      }
+  
+    p {
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+  
+  .form input {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  button { background-color: white; }
+  
+  .message { height: 100px; }
+  
+  h3 { margin: 40px;}
+  
+  h4 { margin-top: 40px;}
+  
+  ul {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    list-style: none;
+    text-underline-offset: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .center {
+  display: flex;
+  justify-content: center;
+  }
+  
+  .centerPages{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  a {
+    color:rgb(223, 11, 11)
+  }
+  
+  .nav-link.active {
+    font-weight: bold; /* This will make the active link bold */
+    font-size: larger;
+  }
+  
+  .rent, .buy {
+    border-style: dashed;
+      border-color: rgb(255, 191, 0);
+      font-size: 35px;
+      border-width: 0.1em;
+      margin: 10px;
+      width: 180px;
+      background: white;
+  }
+
+  .filterContainer {
+    display: flex;
+    border-style: dashed;
+    border-width: 0.5em;
+    border-color:  rgb(253, 230, 160);;
+    margin: 20px;
+    padding: 10px;
+    background: white;
+  }
+  
+  .priceSym {
+    font-size: 40px;
+    color:  rgb(255, 191, 0);
+  }
+  
+  .filterBox {
+    display: grid;
+    justify-items: center;
+    width: 130px;
+  }
+
+  .headerSearchInline {
+    display:flex; 
+    flex-direction:row;
+    background-color: rgb(246, 246, 246);
+    border: 20px solid;
+    border-color: rgb(246, 246, 246);
+    justify-content: center;
+    gap: 40px;
+}
