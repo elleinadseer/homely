@@ -32,10 +32,10 @@ export default function PortfolioContainer() {
 
   return (
     <div>
-      {/*  We are passing the currentPage from state and the function to update it */}
+      <span className='headerSearchInline'>
       <Header/>
       <AboutMe/>
-      <MapContainer/>
+      </span>
     </div>
   );
 }

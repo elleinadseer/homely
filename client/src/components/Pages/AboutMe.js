@@ -4,38 +4,35 @@ export default function AboutMe() {
   return (
     <div>
       <span className="centerPages">
-        Are you seeking to rent or buy?
         <span className="inline">
-          <button className="rent">Rent</button>
-          <button className="buy">Buy</button>
+          <button className="rent">rent</button> OR
+          <button className="buy">buy</button>
         </span>
-        Filters: Proximity / Price / Beds / Pets / Type / Bathroom 
-
 
         <span className="filterContainer">
 
         <span className="filterBox">
-          PRICE
+          price
           <p className="priceSym">£££</p>
         </span> 
 
         <span className="filterBox">
-          BEDS
+          beds
         <img src="https://imgur.com/bvlccTM.png" height="80" width="80" alt="bed"></img>
         </span>
 
         <span className="filterBox">
-          TYPE
+          type
         <img src="https://i.imgur.com/TIlKLdj.png" height="80" width="80" alt="property type"></img>
         </span>
 
         <span className="filterBox">
-          BATHROOMS
+          bathroom
         <img src="https://i.imgur.com/J23J5au.png" height="80" width="80" alt="bathrooms"></img>
         </span>
 
         <span className="filterBox">
-          PETS
+          pets
         <img src="https://i.imgur.com/bvR5Faw.png" height="80" width="80" alt="paw"></img>
         </span>
         

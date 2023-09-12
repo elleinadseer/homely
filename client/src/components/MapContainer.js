@@ -12,6 +12,8 @@ const center = {
 };
 
 function MyComponent() {
+    const apiKey = process.env.GOOGLE_API_KEY; // Load from .env
+
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyDOH5aCAqK0mJpNGMsFQQb8JAiBp6zf36A"
