@@ -10,9 +10,9 @@
       "beds": 3,
       "baths": 2,
       "pets": true,
-      "propertyType": "611eeb51f0d8d81234abcd98", // ObjectId of PropertyType (you'll replace this with the actual ObjectId)
+      "propertyType": "611eeb51f0d8d81234abcd98",
       "description": "This timeless beauty boasts intricate molding, spacious living areas, and a charming wrap-around porch. Step into a piece of history with all the modern comforts you desire.",
-      "images": ["611eef95a088482afcde7f01", "611eef95a088482afcde7f02"] // Array of ObjectId of Images (you'll replace these with the actual ObjectIds)
+      "images": ["611eef95a088482afcde7f01", "611eef95a088482afcde7f02"]
     },
     {
       "address": "Benton Road",
@@ -25,9 +25,9 @@
       "beds": 4,
       "baths": 3,
       "pets": false,
-      "propertyType": "611eeb51f0d8d81234abcd99", // ObjectId of PropertyType
+      "propertyType": "611eeb51f0d8d81234abcd99",
       "description": "A sleek, minimalist design with an open floor plan and floor-to-ceiling windows. This house is perfect for those who crave contemporary living.",
-      "images": ["611eef95a088482afcde7f03", "611eef95a088482afcde7f04"] // Array of ObjectId of Images
+      "images": ["611eef95a088482afcde7f03", "611eef95a088482afcde7f04"]
     },
         {
           "address": "Berwyn Close",
@@ -53,7 +53,7 @@
           "lng": -1.8669,
           "price": 374950,
           "beds": 5,
-          "baths": 3,
+          "baths": 1,
           "pets": false,
           "propertyType": "611eeb51f0d8d81234abcda1", 
           "description": "A spacious family home with a large backyard, perfect for kids and pets. Located in a safe, friendly neighborhood with top-rated schools.",
@@ -68,7 +68,7 @@
           "lng": -1.8702,
           "price": 849950,
           "beds": 6,
-          "baths": 4,
+          "baths": 3,
           "pets": true,
           "propertyType": "611eeb51f0d8d81234abcda0",
           "description": "This stunning Victorian home combines elegance and modern amenities. Enjoy the beauty of a bygone era with all the comforts of today."
@@ -82,7 +82,7 @@
           "lng": -1.9886,
           "price": 159950,
           "beds": 3,
-          "baths": 2,
+          "baths": 1,
           "pets": true,
           "propertyType": "611eeb51f0d8d81234abcda0",
           "description": "A charming cottage with a beautiful garden, perfect for those who love outdoor living. This home exudes warmth and character."
@@ -110,7 +110,7 @@
           "lng": -1.8152,
           "price": 589950,
           "beds": 4,
-          "baths": 3,
+          "baths": 2,
           "pets": true,
           "propertyType": "611eeb51f0d8d81234abcda0",
           "description": "A spacious family home with a large backyard, perfect for kids and pets. Located in a quiet neighborhood with parks and schools nearby."
@@ -124,7 +124,7 @@
           "lng": -1.9422,
           "price": 349950,
           "beds": 4,
-          "baths": 2,
+          "baths": 1,
           "pets": true,
           "propertyType": "611eeb51f0d8d81234abcda0",
           "description": "A family-friendly home with a spacious backyard. This property is located in a safe and friendly neighborhood, perfect for kids."
@@ -138,7 +138,7 @@
           "lng": -1.8751,
           "price": 849950,
           "beds": 5,
-          "baths": 4,
+          "baths": 2,
           "pets": false,
           "propertyType": "611eeb51f0d8d81234abcda1",
           "description": "A modern family home with sleek design and high-end finishes. This property offers contemporary living at its finest."
@@ -152,7 +152,7 @@
           "lng": -1.9273,
           "price": 559950,
           "beds": 3,
-          "baths": 2,
+          "baths": 1,
           "pets": true,
           "propertyType": "611eeb51f0d8d81234abcda0",
           "description": "A beautifully restored Victorian home with original features. This property offers a blend of historic charm and modern amenities."

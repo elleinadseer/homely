@@ -5,5 +5,7 @@
     {
       "name": "Apartment"
     },
-    // Add more property types as needed
+    {
+      "name": "Bungalow"
+    }
   ]
