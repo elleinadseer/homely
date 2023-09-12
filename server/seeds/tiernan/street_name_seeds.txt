@@ -1,0 +1,20 @@
+Abbess Grove     B25 8YB        52.4737 -1.8048
+Benton Road     B11 1TX         52.4591 -1.8637
+Berwyn Close     B26 1QN        52.4657 -1.7999
+Buxton Road     B23 5GA         52.5358 -1.8669
+Coldbath Road     B13 0AE       52.4348 -1.8702
+Colmers Walk     B31 2UH        52.4014 -1.9886
+Cotterills Avenue     B8 3RU        52.4857 -1.8245
+Dolphin Lane     B27 7BE        52.4438 -1.8152
+Downcroft Avenue     B38 8AE        52.4086 -1.9422
+Electric Avenue     B6 7DF      52.5105 -1.8751
+Factory Road     B18 5JU        52.4990 -1.9273
+Frankley Beeches Road     B31 5AA   52.4127 -1.9744
+Gerardsfield Road     B33 0AY       52.4809 -1.7667
+Gipsy Lane     B23 7SP          52.5250 -1.8727
+Kendal Road     B11 1HA         52.4662 -1.8718
+Lambert Close     B23 7AW       52.5309 -1.8592
+Mary Vale Road     B30 1PJ      52.4241 -1.9360
+Maxted Road     B23 5DG         52.5386 -1.8623
+Small Heath Highway     B10 0AE     52.4661 -1.8637
+Sommerfield Road     B32 3RH        52.4436 -1.9883

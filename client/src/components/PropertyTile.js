@@ -1,7 +1,27 @@
+// PropertyTile.js
+/*
 import React from 'react';
 
+const PropertyTile = ({ property }) => {
+  return (
+    <div className="property-tile">
+      <h2>{property.address}</h2>
+      <p>Price: £{property.price}</p>
+      <p>Beds: {property.beds}</p>
+      <p>Baths: {property.baths}</p>
+      <p>Pets: {property.pets ? 'Allowed' : 'Not Allowed'}</p>
+      <p>Description: {property.description}</p>
+      {/ Add more details as needed /}
+    </div>
+  );
+};
+
+export default PropertyTile;
+
+
+
 // an object with image / link / title details to simplify the upcoming map
-export default function Portfolio() {
+/*export default function Portfolio() {
   const projects = {
     TLDR: {
       title: "TL;DR Social Media Platform",
@@ -35,7 +55,7 @@ export default function Portfolio() {
     },
   };
 
-  // map of links / text to place in HTML tags
+  / map of links / text to place in HTML tags
   return (
     <div>
       <div className="centerPages">
@@ -54,4 +74,4 @@ export default function Portfolio() {
       </div>
     </div>
   );
-}
+} */
