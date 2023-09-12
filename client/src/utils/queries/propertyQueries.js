@@ -13,9 +13,7 @@ export const GET_PROPERTIES = gql`
       beds
       baths
       pets
-      propertyType
       description
-      images
     }
   }
 `;

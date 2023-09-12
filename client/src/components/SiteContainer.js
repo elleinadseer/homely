@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import NavTabs from './NavTabs';
 import Header from './Header';
 import Footer from './Footer';
-import Project from './PropertyTile';
+import PropertyTile from './PropertyTile';
 import AboutMe from './Pages/AboutMe';
 import PropertyList from './Pages/PropertyList';
 import Resume from './Pages/Resume';
 import Contact from './Pages/Contact';
 import MapContainer from './MapContainer';
 
-export default function SiteContainer() {
-  const [currentPage, setCurrentPage] = useState('AboutMe');
+const client = new ApolloClient({
+  uri: 'http://localhost:3001/graphql',
+  cache: new InMemoryCache(),
+});
 
-  // This method is checking to see what the value of `currentPage` is. Depending on the value of currentPage, we return the corresponding component to render.
+export default function SiteContainer() {
+  const [currentPage, setCurrentPage] = useState('PropertyList');
+
   const renderPage = () => {
     if (currentPage === 'AboutMe') {
       return <AboutMe />;
@@ -27,15 +32,17 @@ export default function SiteContainer() {
   };
 
   const handlePageChange = (page) => setCurrentPage(page);
-  // <MapContainer />
-  //       <Footer/>
 
   return (
-    <div>
-      <span className='headerSearchInline'>
-      <Header/>
-      <AboutMe/>
-      </span>
-    </div>
+    <ApolloProvider client={client}>
+      <div>
+        <span className='headerSearchInline'>
+          <Header />
+          <AboutMe />
+        </span>
+        <PropertyList/>
+        {renderPage()}
+      </div>
+    </ApolloProvider>
   );
 }

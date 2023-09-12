@@ -1,5 +1,6 @@
+import React from 'react';
 import { useQuery } from '@apollo/client';
-import { GET_PROPERTIES } from '/Users/danielle/homely/client/src/queries/propertyQueries.js';
+import { GET_PROPERTIES } from '../../utils/queries/propertyQueries.js';
 
 const PropertyList = () => {
   const { loading, error, data } = useQuery(GET_PROPERTIES);
