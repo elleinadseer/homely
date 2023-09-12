@@ -1,3 +1,26 @@
+import { useQuery } from '@apollo/client';
+import { GET_PROPERTIES } from '/Users/danielle/homely/client/src/queries/propertyQueries.js';
+
+const PropertyList = () => {
+  const { loading, error, data } = useQuery(GET_PROPERTIES);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
+
+  return (
+    <div>
+      {data.properties.map(property => (
+        <div key={property.address}>
+          <h2>{property.address}</h2>
+          <p>Price: £{property.price}</p>
+          {/* Add more details as needed */}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default PropertyList;
 
 // Portfolio which changes the project components 
 /*
@@ -11,7 +34,7 @@ export default function Portfolio() {
 */
 
 // PropertyList.js
-
+/*
 import React, { useState, useEffect } from 'react';
 import PropertyTile from '/Users/danielle/homely/client/src/components/PropertyTile.js';
 
@@ -43,5 +66,5 @@ const PropertyList = () => {
   );
 };
 
-export default PropertyList;
+export default PropertyList; */
 

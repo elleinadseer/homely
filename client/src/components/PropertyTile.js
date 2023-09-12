@@ -1,5 +1,5 @@
 // PropertyTile.js
-
+/*
 import React from 'react';
 
 const PropertyTile = ({ property }) => {
@@ -11,7 +11,7 @@ const PropertyTile = ({ property }) => {
       <p>Baths: {property.baths}</p>
       <p>Pets: {property.pets ? 'Allowed' : 'Not Allowed'}</p>
       <p>Description: {property.description}</p>
-      {/* Add more details as needed */}
+      {/ Add more details as needed /}
     </div>
   );
 };

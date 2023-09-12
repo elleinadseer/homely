@@ -36,7 +36,6 @@ export default function SiteContainer() {
       <Header/>
       <AboutMe/>
       </span>
-      <PropertyList/>
     </div>
   );
 }
