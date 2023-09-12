@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from '@apollo/client'
 
 export const GET_PROPERTIES = gql`
   query {
@@ -14,6 +14,12 @@ export const GET_PROPERTIES = gql`
       baths
       pets
       description
+      propertyType {
+        name
+      }
+      images {
+        image
+      }
     }
   }
-`;
+`
