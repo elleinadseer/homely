@@ -40,8 +40,11 @@ export default function SiteContainer() {
           <Header />
           <AboutMe />
         </span>
-        <PropertyList/>
-        {renderPage()}
+        <span className='propertySearchInline'>
+        <PropertyList />
+        <div className='mapContainer'><MapContainer /></div>
+        </span>
+
       </div>
     </ApolloProvider>
   );
