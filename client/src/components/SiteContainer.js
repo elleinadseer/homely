@@ -40,7 +40,7 @@ export default function SiteContainer() {
           <Header />
           <AboutMe />
         </span>
-        <PropertyList/>
+        <MapContainer/>
         {renderPage()}
       </div>
     </ApolloProvider>
