@@ -25,7 +25,7 @@ const resolvers = {
     },
 
     properties: async () => {
-      return Property.find()
+      return Property.find().populate('propertyType').populate('images')
     },
 
     property: async (_, { _id }) => {
@@ -33,7 +33,7 @@ const resolvers = {
       if (!property) {
         throw new Error('Property not found')
       }
-      return property
+      return property.populate('propertyType').populate('images')
     },
 
     propertyTypes: async () => {
@@ -89,6 +89,7 @@ const resolvers = {
 
     addProperty: async (_, args) => {
       const property = await Property.create(args.input)
+
       return property
     },
 
