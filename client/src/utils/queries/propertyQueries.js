@@ -2,7 +2,7 @@ import { gql } from '@apollo/client'
 
 export const GET_PROPERTIES = gql`
   query {
-    properties {
+    properties(filter: $filter) {
       address
       city
       county
