@@ -24,8 +24,32 @@ const resolvers = {
       return user
     },
 
-    properties: async () => {
-      return Property.find().populate('propertyType').populate('images')
+    properties: async (_, { filter }) => {
+      const params = {}
+
+      if (filter) {
+        if (filter.priceMax) {
+          params.price = { $lte: filter.priceMax }
+        }
+
+        if (filter.beds) {
+          params.beds = filter.beds
+        }
+
+        if (filter.baths) {
+          params.baths = filter.baths
+        }
+
+        if (filter.pets !== undefined) {
+          params.pets = filter.pets
+        }
+
+        if (filter.propertyType) {
+          params.propertyType = filter.propertyType
+        }
+      }
+
+      return Property.find(params).populate('propertyType').populate('images')
     },
 
     property: async (_, { _id }) => {
@@ -89,6 +113,16 @@ const resolvers = {
 
     addProperty: async (_, args) => {
       const property = await Property.create(args.input)
+
+      return property
+    },
+
+    updateProperty: async (_, { propertyId, input }) => {
+      const property = await Property.findByIdAndUpdate(
+        propertyId,
+        { ...input },
+        { new: true }
+      )
 
       return property
     },
