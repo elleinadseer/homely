@@ -48,8 +48,8 @@ export default function SiteContainer() {
         <Signup />
         <span className='propertySearchInline'>
         <PropertyList />
+        <MapContainer />       
         </span>
-
       </div>
     </ApolloProvider>
   );
