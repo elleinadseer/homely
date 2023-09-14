@@ -4,8 +4,8 @@ import { useQuery } from '@apollo/client';
 import { GET_PROPERTIES } from '../utils/queries/propertyQueries.js';
 
 const containerStyle = {
-  width: '30%',
-  height: '700px',
+  width: '40%',
+  height: '600px',
 };
 
 
