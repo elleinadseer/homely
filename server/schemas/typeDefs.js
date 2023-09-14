@@ -45,6 +45,14 @@ const typeDefs = gql`
     images: [ID]
   }
 
+  input PropertyFilterInput {
+    priceMax: Float
+    beds: Int
+    baths: Int
+    pets: Boolean
+    propertyType: ID
+  }
+
   type PropertyType {
     _id: ID
     name: String
@@ -64,7 +72,7 @@ const typeDefs = gql`
     me: User
     users: [User]
     user(username: String!): User
-    properties: [Property]
+    properties(filter: PropertyFilterInput): [Property]
     property(_id: ID!): Property
     propertyTypes: [PropertyType]
     propertyType(_id: ID!): PropertyType
@@ -82,6 +90,7 @@ const typeDefs = gql`
       lastName: String!
     ): Auth
     addProperty(input: PropertyInput): Property
+    updateProperty(propertyId: ID!, input: PropertyInput): Property
     removeProperty(propertyId: ID!): Property
     savePropertyToUser(propertyId: ID!): User
     removePropertyFromUser(propertyId: ID!): User
