@@ -42,7 +42,7 @@ export default function SiteContainer() {
         </span>
         <span className='propertySearchInline'>
         <PropertyList />
-        <div className='mapContainer'><MapContainer /></div>
+        <MapContainer />
         </span>
 
       </div>

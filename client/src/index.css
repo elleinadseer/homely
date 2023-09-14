@@ -9,7 +9,7 @@
       }
   
     p {
-      margin: 10px;
+      margin-top: 10px;
     }
   
   .form input {
@@ -107,9 +107,9 @@
 }
 
 .PropertyTile {
-    border: dashed;
+    border: solid;
     border-color: orange;
-    border-radius: 10px;
+    border-radius: 14px;
     background-color: white
 }
 
@@ -121,4 +121,19 @@
 display: flex;
 background-color: rgb(248, 248, 248);
 justify-content: space-evenly;
+}
+
+.propertyText {
+  margin: 17px;
+}
+
+.propertyText h2 {
+  font-size: 30px;
+}
+
+.imgSpan {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  gap: 8px;
 }
