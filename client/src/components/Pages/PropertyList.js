@@ -13,7 +13,7 @@ const PropertyList = () => {
       {data.properties.map(property => (
         <div key={property.address}>
           <div className="PropertyTile">
-            <img src="https://i.imgur.com/id7Ci0F.jpg" height="200" width="350" alt="house"></img>
+            <img src={property.images[0].image} height="200" width="350" alt="house"></img>
           <div className="propertyText">
           <h2>£{property.price}</h2>
           <p>{property.beds} bedroom house for sale</p>
