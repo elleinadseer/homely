@@ -5,8 +5,7 @@ export default function AboutMe() {
     <div>
       <span className="centerPages">
         <span className="inline">
-          <button className="rent">rent</button> 
-          or
+          <button className="rent">rent</button> OR
           <button className="buy">buy</button>
         </span>
 
