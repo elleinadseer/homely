@@ -10,9 +10,7 @@
     "beds": 3,
     "baths": 2,
     "pets": true,
-    "propertyType": "611eeb51f0d8d81234abcd98",
-    "description": "This timeless beauty boasts intricate molding, spacious living areas, and a charming wrap-around porch. Step into a piece of history with all the modern comforts you desire.",
-    "images": ["611eef95a088482afcde7f01", "611eef95a088482afcde7f02"]
+    "description": "This timeless beauty boasts intricate molding, spacious living areas, and a charming wrap-around porch. Step into a piece of history with all the modern comforts you desire."
   },
   {
     "address": "Benton Road",
@@ -25,9 +23,7 @@
     "beds": 4,
     "baths": 3,
     "pets": false,
-    "propertyType": "611eeb51f0d8d81234abcd99",
-    "description": "A sleek, minimalist design with an open floor plan and floor-to-ceiling windows. This house is perfect for those who crave contemporary living.",
-    "images": ["611eef95a088482afcde7f03", "611eef95a088482afcde7f04"]
+    "description": "A sleek, minimalist design with an open floor plan and floor-to-ceiling windows. This house is perfect for those who crave contemporary living."
   },
   {
     "address": "Berwyn Close",
@@ -40,9 +36,7 @@
     "beds": 4,
     "baths": 2,
     "pets": true,
-    "propertyType": "611eeb51f0d8d81234abcda0",
-    "description": "Nestled in a quiet cul-de-sac, this family home offers comfort and tranquility. The spacious backyard is perfect for outdoor gatherings.",
-    "images": ["611eef95a088482afcde7f05", "611eef95a088482afcde7f06"]
+    "description": "Nestled in a quiet cul-de-sac, this family home offers comfort and tranquility. The spacious backyard is perfect for outdoor gatherings."
   },
   {
     "address": "Buxton Road",
@@ -55,9 +49,7 @@
     "beds": 5,
     "baths": 1,
     "pets": false,
-    "propertyType": "611eeb51f0d8d81234abcda1",
-    "description": "A spacious family home with a large backyard, perfect for kids and pets. Located in a safe, friendly neighborhood with top-rated schools.",
-    "images": ["611eef95a088482afcde7f07", "611eef95a088482afcde7f08"]
+    "description": "A spacious family home with a large backyard, perfect for kids and pets. Located in a safe, friendly neighborhood with top-rated schools."
   },
   {
     "address": "Coldbath Road",
@@ -70,7 +62,6 @@
     "beds": 6,
     "baths": 3,
     "pets": true,
-    "propertyType": "611eeb51f0d8d81234abcda0",
     "description": "This stunning Victorian home combines elegance and modern amenities. Enjoy the beauty of a bygone era with all the comforts of today."
   },
   {
@@ -84,7 +75,6 @@
     "beds": 3,
     "baths": 1,
     "pets": true,
-    "propertyType": "611eeb51f0d8d81234abcda0",
     "description": "A charming cottage with a beautiful garden, perfect for those who love outdoor living. This home exudes warmth and character."
   },
   {
@@ -98,7 +88,6 @@
     "beds": 5,
     "baths": 3,
     "pets": false,
-    "propertyType": "611eeb51f0d8d81234abcda1",
     "description": "A modern masterpiece with sleek lines and high-end finishes. This home is an architectural gem, perfect for the design enthusiast."
   },
   {
@@ -112,7 +101,6 @@
     "beds": 4,
     "baths": 2,
     "pets": true,
-    "propertyType": "611eeb51f0d8d81234abcda0",
     "description": "A spacious family home with a large backyard, perfect for kids and pets. Located in a quiet neighborhood with parks and schools nearby."
   },
   {
@@ -126,7 +114,6 @@
     "beds": 4,
     "baths": 1,
     "pets": true,
-    "propertyType": "611eeb51f0d8d81234abcda0",
     "description": "A family-friendly home with a spacious backyard. This property is located in a safe and friendly neighborhood, perfect for kids."
   },
   {
@@ -140,7 +127,6 @@
     "beds": 5,
     "baths": 2,
     "pets": false,
-    "propertyType": "611eeb51f0d8d81234abcda1",
     "description": "A modern family home with sleek design and high-end finishes. This property offers contemporary living at its finest."
   },
   {
@@ -154,7 +140,6 @@
     "beds": 3,
     "baths": 1,
     "pets": true,
-    "propertyType": "611eeb51f0d8d81234abcda0",
     "description": "A beautifully restored Victorian home with original features. This property offers a blend of historic charm and modern amenities."
   }
 ]

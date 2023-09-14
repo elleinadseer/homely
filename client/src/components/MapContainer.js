@@ -1,31 +1,42 @@
 import React from 'react';
-import { GoogleMap, Marker, useJsApiLoader } from '@react-google-maps/api';
+import { GoogleMap, InfoWindow, Marker, useJsApiLoader } from '@react-google-maps/api';
+import { useQuery } from '@apollo/client';
+import { GET_PROPERTIES } from '../utils/queries/propertyQueries.js';
 
 const containerStyle = {
-  width: '90%',
-  height: '300px',
+  width: '30%',
+  height: '700px',
 };
 
-const markers = [
-  { id:1, lat: 52.4591, lng: -1.8637 },
-  { id:2, lat: 52.4186, lng: -1.8467 },
-  { id:3, lat: 52.5314, lng: -1.8322 },
-];
+
+  
+
+
+// const markers = [
+//   { id:1, lat: 52.4591, lng: -1.8637 },
+//   { id:2, lat: 52.4186, lng: -1.8467 },
+//   { id:3, lat: 52.5314, lng: -1.8322 },
+// ];
 
 const center = {
   lat: 52.4591,
   lng: -1.8637
 };
 
-function MyComponent() {
+function MapContainer() {
     const apiKey = process.env.GOOGLE_API_KEY; // Load from .env
+
+    const { loading, error, data } = useQuery(GET_PROPERTIES);
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyDOH5aCAqK0mJpNGMsFQQb8JAiBp6zf36A"
   })
 
-  const [map, setMap] = React.useState(null)
+  const [map, setMap] = React.useState(null);
+  const [selectedProperty, setSelectedProperty]= React.useState(null);
+  const [activeMarker, setActiveMarker] = React.useState(null);
+  const [showInfoWindow, setInfoWindowFlag] = React.useState(true);
 
   const onLoad = React.useCallback(function callback(map) {
     // This is just an example of getting and using the map instance!!! don't just blindly copy!
@@ -48,15 +59,36 @@ function MyComponent() {
         onUnmount={onUnmount}
        
       >
-        {markers.map(markerz => (
+        {data?.properties.map(property => (
     <Marker
-      position={{ lat: markerz.lat, lng: markerz.lng }}
-      // key={markerz.id}
+      position={{ lat: property.lat, lng: property.lng }}
+       key={property.id}
+       onClick={(props, marker) => {
+        setSelectedProperty(property);
+        setActiveMarker(marker);
+       }}
     />
 ))}
+{selectedProperty ? (
+  <InfoWindow
+  visible={showInfoWindow}
+  marker={activeMarker}
+  position={{lat: selectedProperty.lat, lng: selectedProperty.lng}}
+  onCloseClick={() => {
+    setSelectedProperty(null);
+  }}
+  ><>
+    <h1>£{selectedProperty.price}</h1>
+    <h1>{selectedProperty.address}</h1>
+    <h1>🛏️:{selectedProperty.beds}</h1>
+    <h1>🛀:{selectedProperty.baths}</h1>
+    
+  </>
+  </InfoWindow>
+) : null}
         <></>
       </GoogleMap>
   ) : <></>
 }
 
-export default React.memo(MyComponent)
+export default React.memo(MapContainer)
