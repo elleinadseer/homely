@@ -4,10 +4,7 @@ import NavTabs from './NavTabs';
 import Header from './Header';
 import Footer from './Footer';
 import PropertyTile from './PropertyTile';
-import AboutMe from './Pages/AboutMe';
-import LogIn from './Pages/Login.js';
-import Signup from './Pages/Signup.js';
-
+import AboutMe from './Pages/PropertyFilter';
 
 import PropertyList from './Pages/PropertyList';
 import Resume from './Pages/Resume';
