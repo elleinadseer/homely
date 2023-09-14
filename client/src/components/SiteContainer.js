@@ -5,6 +5,7 @@ import Header from './Header';
 import Footer from './Footer';
 import PropertyTile from './PropertyTile';
 import AboutMe from './Pages/PropertyFilter';
+
 import PropertyList from './Pages/PropertyList';
 import Resume from './Pages/Resume';
 import Contact from './Pages/Contact';
@@ -40,11 +41,12 @@ export default function SiteContainer() {
           <Header />
           <AboutMe />
         </span>
+        <LogIn />
+        <Signup />
         <span className='propertySearchInline'>
         <PropertyList />
-        <MapContainer />
+        <MapContainer />       
         </span>
-
       </div>
     </ApolloProvider>
   );
