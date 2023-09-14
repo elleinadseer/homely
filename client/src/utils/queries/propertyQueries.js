@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 
 export const GET_PROPERTIES = gql`
-  query {
+  query getProperties($filter: PropertyFilterInput) {
     properties(filter: $filter) {
       address
       city
