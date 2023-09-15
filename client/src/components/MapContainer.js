@@ -8,10 +8,6 @@ const containerStyle = {
   height: '600px',
 };
 
-
-  
-
-
 // const markers = [
 //   { id:1, lat: 52.4591, lng: -1.8637 },
 //   { id:2, lat: 52.4186, lng: -1.8467 },

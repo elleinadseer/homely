@@ -4,7 +4,7 @@ import NavTabs from './NavTabs';
 import Header from './Header';
 import Footer from './Footer';
 import PropertyTile from './PropertyTile';
-import PropertyFilter from './Pages/PropertyFilter';
+import PropertyFilter from './PropertyFilter';
 import LogIn from './Pages/Login.js';
 import Signup from './Pages/Signup.js';
 
