@@ -74,17 +74,21 @@
     margin: 20px;
     padding: 10px;
     background: white;
+    gap: 4px;
+    height: 142px;
   }
   
   .priceSym {
-    font-size: 40px;
+    font-size: 55px;
     color:  rgb(255, 191, 0);
   }
   
   .filterBox {
     display: grid;
-    justify-items: center;
     width: 130px;
+    align-items: start;
+    justify-items: center;
+    justify-content: space-evenly;
   }
 
   .headerSearchInline {
@@ -162,4 +166,9 @@ justify-content: space-evenly;
 .submitButton button {
 color: orange;
 margin: 60px;
+}
+
+.filterBox select {
+  border: none;
+  margin: 10px;
 }

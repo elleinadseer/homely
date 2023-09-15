@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 import { GET_PROPERTIES } from "../../utils/queries/propertyQueries.js";
 
-const PropertyPage = () => {
+const PropertyDetails = () => {
   const { propertyId } = useParams();
   const { loading, error, data } = useQuery(GET_PROPERTIES);
 
@@ -48,4 +48,4 @@ const PropertyPage = () => {
   );
 };
 
-export default PropertyPage;
+export default PropertyDetails;
