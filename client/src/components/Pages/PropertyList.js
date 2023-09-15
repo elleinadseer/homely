@@ -5,7 +5,7 @@ import { GET_PROPERTIES } from '../../utils/queries/propertyQueries.js';
 const PropertyList = ({ filter }) => {
   console.log('Received filter in PropertyList:', filter);
   const { loading, error, data } = useQuery(GET_PROPERTIES, {
-    variables: { filter: filter },
+    variables: { filter },
   });
 
   if (loading) return <p>Loading...</p>;
