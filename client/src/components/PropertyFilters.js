@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { useQuery } from '@apollo/client';
+import { GET_PROPERTY_TYPES } from '../utils/queries/propertyQueries.js';
 
 const PropertyFilter = ({ onFilterChange }) => {
   const [filter, setFilter] = useState({});
+  const { loading, error, data } = useQuery(GET_PROPERTY_TYPES);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -41,8 +44,12 @@ const PropertyFilter = ({ onFilterChange }) => {
     '1000000',
   ];
   const bedroomOptions = ['', '1', '2', '3', '4', '5', '6'];
-  const propertyTypeOptions = ['', 'apartment', 'bungalow', 'detached'];
   const bathroomOptions = ['', '1', '2', '3', '4', '5', '6'];
+
+  // Sort property types alphabetically
+  const sortedPropertyTypes = data?.propertyTypes.slice().sort((a, b) => {
+    return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+  });
 
   return (
     <div>
@@ -104,13 +111,20 @@ const PropertyFilter = ({ onFilterChange }) => {
               id="properties"
               name="propertyType"
               onChange={handleChange}
-              value={filter.propertyType || ''}
+              value={filter.propertyType}
             >
-              {propertyTypeOptions.map((option) => (
-                <option key={option} value={option}>
-                  {option === '' ? '-- Property Type --' : option}
-                </option>
-              ))}
+              <option value="">-- All --</option>
+              {loading ? (
+                <option>Loading...</option>
+              ) : error ? (
+                <option>Error loading property types</option>
+              ) : (
+                sortedPropertyTypes.map((type) => (
+                  <option key={type._id} value={type._id}>
+                    {type.name}
+                  </option>
+                ))
+              )}
             </select>
           </span>
 
