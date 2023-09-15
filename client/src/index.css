@@ -175,13 +175,16 @@ margin: 60px;
 }
 
 .signLogLinks {
-  color: rgb(250, 152, 32);
   margin-left: 15px;
+  font-size: 20px;
 }
 
 .signLogLinks a {
+  font-size: 20px;
   color: black;
   text-decoration-color: darkorange;
+  text-decoration-thickness: 4px;
+  text-decoration-style: solid;
 }
 
 form {

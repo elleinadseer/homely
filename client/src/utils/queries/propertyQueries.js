@@ -44,6 +44,13 @@ export const GET_PROPERTY = gql`
   }
 `;
 
+/*    propertyType {
+        name
+      }
+      images {
+        image
+      } */
+
 export const GET_PROPERTY_TYPES = gql`
   query getPropertyTypes {
     propertyTypes {
