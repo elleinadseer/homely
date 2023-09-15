@@ -4,7 +4,9 @@ import NavTabs from './NavTabs';
 import Header from './Header';
 import Footer from './Footer';
 import PropertyTile from './PropertyTile';
-import AboutMe from './Pages/PropertyFilter';
+import PropertyFilter from './PropertyFilter';
+import LogIn from './Pages/Login.js';
+import Signup from './Pages/Signup.js';
 
 import PropertyList from './Pages/PropertyList';
 import Resume from './Pages/Resume';
@@ -21,7 +23,7 @@ export default function SiteContainer() {
 
   const renderPage = () => {
     if (currentPage === 'AboutMe') {
-      return <AboutMe />;
+      return <PropertyFilter />;
     }
     if (currentPage === 'PropertyList') {
       return <PropertyList />;
@@ -39,10 +41,8 @@ export default function SiteContainer() {
       <div>
         <span className='headerSearchInline'>
           <Header />
-          <AboutMe />
+          <PropertyFilter />
         </span>
-        <LogIn />
-        <Signup />
         <span className='propertySearchInline'>
         <PropertyList />
         <MapContainer />       
