@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import PropertyList from "./PropertyList";
-import MapContainer from "../MapContainer";
+import PropertyList from './PropertyList';
+import MapContainer from '../MapContainer';
 
-const Home = () => {
+const Home = ({ filter }) => {
   return (
     <>
-      <PropertyList />
+      <PropertyList filter={filter} />
     </>
   );
 };
