@@ -25,22 +25,22 @@ export default function SiteContainer() {
 
   return (
     <ApolloProvider client={client}>
+      <Router>
       <div>
         <span className="headerSearchInline">
           <Header />
           <PropertyFilter onFilterChange={handleFilterChange} />
         </span>
         <span className="propertySearchInline">
-          <Router>
             <Routes>
               <Route path="/" element={<Home filter={filter} />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/property/:propertyId" element={<PropertyPage />} />
             </Routes>
-          </Router>
         </span>
       </div>
+      </Router>
     </ApolloProvider>
   );
 }

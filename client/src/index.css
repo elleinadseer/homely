@@ -38,6 +38,7 @@
   .center {
   display: flex;
   justify-content: center;
+  margin: 28px;
   }
   
   .centerPages{
@@ -170,5 +171,38 @@ margin: 60px;
 
 .filterBox select {
   border: none;
+  margin: 10px;
+}
+
+.signLogLinks {
+  color: rgb(250, 152, 32);
+  margin-left: 15px;
+}
+
+.signLogLinks a {
+  color: black;
+  text-decoration-color: darkorange;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.labelInput label {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.signupForm h2 {
+  font-size: 25px;
+  color: darkorange;
+  margin: 10px;
+}
+
+.loginForm h2 {
+  font-size: 25px;
+  color: darkorange;
   margin: 10px;
 }

@@ -1,11 +1,15 @@
 import React from 'react';
-// Image of my name as the header of each page
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   return (
     <div>
-     <span className='center'>
-      <img src="https://imgur.com/ZDOWZ8M.jpg" alt="homely logo"></img>
-     </span></div>
+      <span className='center'>
+      <Link to="/"><img src="https://i.imgur.com/EfZzC5F.png" alt="homely logo"></img></Link>
+      </span>
+      <div className="signLogLinks">
+        <Link to="/signup">Sign up</Link> or <Link to="/login">log in</Link> to favourite properties
+      </div>
+    </div>
   );
 }

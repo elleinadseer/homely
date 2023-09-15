@@ -3,6 +3,7 @@ import { gql } from '@apollo/client';
 export const GET_PROPERTIES = gql`
   query getProperties($filter: PropertyFilterInput) {
     properties(filter: $filter) {
+      _id
       address
       city
       county
@@ -25,8 +26,9 @@ export const GET_PROPERTIES = gql`
 `;
 
 export const GET_PROPERTY = gql`
-  query getProperty($id: ID!) {
-    property(id: $id) {
+  query Property($id: ID!) {
+    property(_id: $id) {
+      _id
       address
       city
       county
@@ -38,12 +40,6 @@ export const GET_PROPERTY = gql`
       baths
       pets
       description
-      propertyType {
-        name
-      }
-      images {
-        image
-      }
     }
   }
 `;

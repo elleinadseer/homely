@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_PROPERTIES } from '../../utils/queries/propertyQueries.js';
 
@@ -16,12 +17,14 @@ const PropertyList = ({ filter }) => {
       {data.properties.map((property) => (
         <div key={property.address}>
           <div className="PropertyTile">
+          <Link to={`/property/${property._id}`}>
             <img
               src="https://i.imgur.com/id7Ci0F.jpg"
               height="200"
               width="350"
               alt="house"
             ></img>
+            </Link >
             <div className="propertyText">
               <h2>£{property.price}</h2>
               <p>{property.beds} bedroom house for sale</p>
