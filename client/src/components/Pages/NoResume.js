@@ -1,4 +1,4 @@
-import React from 'react';
+/* import React from 'react';
 // resume with an example of downloading a file 
 
 export default function Resume() {
@@ -30,4 +30,4 @@ export default function Resume() {
       </span>
     </div>
   );
-}
+} */

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
 import Header from "./components/Header";
-import PropertyFilter from "./components/PropertyFilter";
+import PropertyFilter from "./components/PropertyFilters";
 import Login from "./components/Pages/Login";
 import Signup from "./components/Pages/Signup";
 
