@@ -28,7 +28,7 @@ db.once('open', async () => {
           propertyTypes[Math.floor(Math.random() * propertyTypes.length)]._id
 
         // Assign random images
-        const numRandomImages = 2
+        const numRandomImages = 1
         const randomImages = []
         for (let i = 0; i < numRandomImages; i++) {
           randomImages.push(

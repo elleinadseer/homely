@@ -55,13 +55,13 @@ const resolvers = {
     property: async (_, { _id }) => {
       try {
         const property = await Property.findById(_id)
-         // .populate('propertyType') // Populate propertyType field
-        //  .populate('images'); // Populate images field
-    
+          .populate('propertyType')
+          .populate('images');
+
         if (!property) {
           throw new Error('Property not found');
         }
-    
+
         return property;
       } catch (error) {
         throw new Error(`Error fetching property: ${error.message}`);

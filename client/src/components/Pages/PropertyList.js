@@ -18,16 +18,13 @@ const PropertyList = ({ filter }) => {
         <div key={property.address}>
           <div className="PropertyTile">
           <Link to={`/property/${property._id}`}>
-            <img
-              src="https://i.imgur.com/id7Ci0F.jpg"
-              height="200"
-              width="350"
-              alt="house"
-            ></img>
+          {property.images.map((image, index) => (
+  <img key={index} src={image.image} height="250" width="400" alt="property" />
+            ))}
             </Link >
             <div className="propertyText">
               <h2>£{property.price}</h2>
-              <p>{property.beds} bedroom house for sale</p>
+              <p>{property.beds} Bedroom {property.propertyType.name} For Sale</p>
               <p>
                 {property.address}, {property.city}, {property.postcode}
               </p>

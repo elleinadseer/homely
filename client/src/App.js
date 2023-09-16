@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 import Header from './components/Header';
-import PropertyFilter from './components/PropertyFilters';
+import Footer from './components/Footer';
+
 import Login from './components/Pages/Login';
 import Signup from './components/Pages/Signup';
 
@@ -27,18 +28,13 @@ export default function SiteContainer() {
     <ApolloProvider client={client}>
       <Router>
       <div>
-        <span className="headerSearchInline">
-          <Header />
-          <PropertyFilter onFilterChange={handleFilterChange} />
-        </span>
-        <span className="propertySearchInline">
-            <Routes>
-              <Route path="/" element={<Home filter={filter} />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/property/:propertyId" element={<PropertyPage />} />
+         <Routes>
+            <Route path="/" element={ <Home filter={filter} /> }/>
+              <Route path="/login" element={<><Header /><Login /></>} />
+              <Route path="/signup" element={<><Header /><Signup /></>} />
+              <Route path="/property/:propertyId" element={<><Header /><PropertyPage /></>} />
             </Routes>
-        </span>
+        <Footer />
       </div>
       </Router>
     </ApolloProvider>

@@ -40,6 +40,12 @@ export const GET_PROPERTY = gql`
       baths
       pets
       description
+      propertyType {
+        name
+      }
+      images {
+        image
+      }
     }
   }
 `;

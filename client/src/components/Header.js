@@ -6,10 +6,10 @@ export default function Header() {
     <div>
       <span className='center'>
       <Link to="/"><img src="https://i.imgur.com/EfZzC5F.png" alt="homely logo"></img></Link>
-      </span>
       <div className="signLogLinks">
         <Link to="/signup">Sign up</Link> or <Link to="/login">log in</Link> to favourite properties
       </div>
+      </span>
     </div>
   );
 }
