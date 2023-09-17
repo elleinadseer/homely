@@ -28,6 +28,10 @@ const resolvers = {
       const params = {}
 
       if (filter) {
+        if (filter.rent !== undefined) {
+          params.rent = filter.rent
+        }
+
         if (filter.priceMax) {
           params.price = { $lte: filter.priceMax }
         }
@@ -56,18 +60,17 @@ const resolvers = {
       try {
         const property = await Property.findById(_id)
           .populate('propertyType')
-          .populate('images');
+          .populate('images')
 
         if (!property) {
-          throw new Error('Property not found');
+          throw new Error('Property not found')
         }
 
-        return property;
+        return property
       } catch (error) {
-        throw new Error(`Error fetching property: ${error.message}`);
+        throw new Error(`Error fetching property: ${error.message}`)
       }
     },
-    
 
     propertyTypes: async () => {
       return PropertyType.find()
