@@ -1,51 +1,81 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
-import { GET_PROPERTIES } from "../../utils/queries/propertyQueries.js";
+import { GET_PROPERTY } from "../../utils/queries/propertyQueries.js";
+import Contact from './Contact';
 
-const PropertyDetails = () => {
+const PropertyPage = () => {
   const { propertyId } = useParams();
-  const { loading, error, data } = useQuery(GET_PROPERTIES);
 
   // TO DO
-  /*
-    const { loading, data } = useQuery(GET_SINGLE_PROPERTIES, {
-      // pass URL parameter
-      variables: { propertyId: propertyId },
-    });
-*/
+  const { loading, data, error } = useQuery(GET_PROPERTY, {
+    // pass URL parameter
+    variables: { id: propertyId },
+  });
 
   if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+  if (error) {
+    console.error("Error fetching property:", error);
+    return <p>Error: {error.message}</p>;
+  }
+
+  const property = data.property;
 
   return (
-    <div className="propertyDetailsings">
-      <div key="1">
-        <div className="PropertyTile">
+    <div className="propertyDetails">
+      <div className="propertySolo">
+        {property.images.map((image, index) => (
           <img
-            src="https://i.imgur.com/id7Ci0F.jpg"
-            height="200"
-            width="350"
-            alt="house"
-          ></img>
-          <div className="propertyText">
-            <h2>$1,000,000</h2>
-            <p>10 bedroom house for sale</p>
-            <p>This is a Property Details page</p>
-            <span className="imgSpan">
-              <img
-                src="https://i.imgur.com/J23J5au.png"
-                height="25"
-                width="25"
-                alt="bathrooms"
-              ></img>
-              Bathrooms: 79871232
-            </span>
-          </div>
+            className="mainPropertyImg"
+            key={index}
+            src={image.image}
+            height="400"
+            width="650"
+            alt="property"
+          />
+        ))}
+        <div className="propertyPageText">
+          <h2>£{property.price}</h2>
+          <p>
+            {property.beds} Bedroom {property.propertyType.name} For Sale
+          </p>
+          <p>
+            {property.address}, {property.city}
+            <br></br>
+            {property.postcode}
+          </p>
+          <span className="imgSpan">
+            <img
+              src="https://i.imgur.com/J23J5au.png"
+              height="25"
+              width="25"
+              alt="bathrooms"
+            ></img>{" "}
+            Bathrooms: {property.baths}
+          </span>
+          <p>{property.description}</p>
         </div>
       </div>
+
+      <span className="mapContact">
+      <div className="mapContainer">
+        <div>
+          <iframe
+            className="map"
+            title="property-map"
+            width="650"
+            height="400"
+            border="0px"
+            src={`https://maps.google.com/maps?q=${property.lat},${property.lng}&output=embed`}
+          ></iframe>
+        </div>
+      </div>
+
+      <div className="contactForm">
+        <Contact />
+        </div></span>
     </div>
   );
 };
 
-export default PropertyDetails;
+export default PropertyPage;

@@ -33,10 +33,10 @@ function Signup(props) {
   return (
     <div className="signupForm">
 
-      <h2>Signup</h2>
+      <h2>Sign Up</h2>
       <form onSubmit={handleFormSubmit}>
-      <div className="flex-row space-between my-2">
-          <label htmlFor="username">username:</label>
+      <div className="labelInput">
+          <label htmlFor="username">Username:</label><br></br>
           <input
             placeholder="username"
             name="username"
@@ -45,8 +45,8 @@ function Signup(props) {
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="firstName">First Name:</label>
+        <div className="labelInput">
+          <label htmlFor="firstName">First Name:</label><br></br>
           <input
             placeholder="First"
             name="firstName"
@@ -55,8 +55,8 @@ function Signup(props) {
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="lastName">Last Name:</label>
+        <div className="labelInput">
+          <label htmlFor="lastName">Last Name:</label><br></br>
           <input
             placeholder="Last"
             name="lastName"
@@ -65,8 +65,8 @@ function Signup(props) {
             onChange={handleChange}
           />
         </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="email">Email:</label>
+        <div className="labelInput">
+          <label htmlFor="email">Email:</label><br></br>
           <input
   placeholder="youremail@test.com"
   name="email"
@@ -75,8 +75,8 @@ function Signup(props) {
   onChange={handleChange}
 />
         </div>
-        <div className="flex-row space-between my-2">
-          <label htmlFor="pwd">Password:</label>
+        <div className="labelInput">
+          <label htmlFor="pwd">Password:</label><br></br>
           <input
   placeholder="******"
   name="password"
