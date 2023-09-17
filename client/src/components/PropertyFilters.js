@@ -18,6 +18,12 @@ const PropertyFilter = ({ onFilterChange }) => {
         : value === 'false'
         ? (newValue = false)
         : (newValue = undefined);
+    } else if (name === 'rent') {
+      value === 'true'
+        ? (newValue = true)
+        : value === 'false'
+        ? (newValue = false)
+        : (newValue = undefined);
     } else {
       newValue = value;
     }
@@ -55,8 +61,23 @@ const PropertyFilter = ({ onFilterChange }) => {
     <div>
       <span className="centerPages">
         <span className="inline">
-          <button className="rent">rent</button> or
-          <button className="sale">sale</button>
+          <button
+            className="rent"
+            name="rent"
+            value={true}
+            onClick={handleChange}
+          >
+            rent
+          </button>
+          or
+          <button
+            className="buy"
+            name="rent"
+            value={false}
+            onClick={handleChange}
+          >
+            buy
+          </button>
         </span>
 
         <span className="filterContainer">
