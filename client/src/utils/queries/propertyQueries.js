@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client'
+import { gql } from '@apollo/client';
 
 export const GET_PROPERTIES = gql`
   query getProperties($filter: PropertyFilterInput) {
@@ -22,7 +22,7 @@ export const GET_PROPERTIES = gql`
       }
     }
   }
-`
+`;
 
 export const GET_PROPERTY = gql`
   query getProperty($id: ID!) {
@@ -46,4 +46,13 @@ export const GET_PROPERTY = gql`
       }
     }
   }
-`
+`;
+
+export const GET_PROPERTY_TYPES = gql`
+  query getPropertyTypes {
+    propertyTypes {
+      _id
+      name
+    }
+  }
+`;

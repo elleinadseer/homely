@@ -1,4 +1,4 @@
-import React from 'react';
+/*import React from 'react';
 
 // Links to my gitHub, linkedIn and a (random) X profile with images attached
 export default function Header() {
@@ -13,4 +13,4 @@ export default function Header() {
     </span>
     </div>
   );
-}
+}*/
