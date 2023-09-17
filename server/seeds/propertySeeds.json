@@ -1,5 +1,6 @@
 [
   {
+    "rent": true,
     "address": "Abbess Grove",
     "city": "Birmingham",
     "county": "West Midlands",
@@ -13,6 +14,7 @@
     "description": "This timeless beauty boasts intricate molding, spacious living areas, and a charming wrap-around porch. Step into a piece of history with all the modern comforts you desire."
   },
   {
+    "rent": true,
     "address": "Benton Road",
     "city": "Birmingham",
     "county": "West Midlands",
@@ -26,6 +28,7 @@
     "description": "A sleek, minimalist design with an open floor plan and floor-to-ceiling windows. This house is perfect for those who crave contemporary living."
   },
   {
+    "rent": true,
     "address": "Berwyn Close",
     "city": "Birmingham",
     "county": "West Midlands",
@@ -39,6 +42,7 @@
     "description": "Nestled in a quiet cul-de-sac, this family home offers comfort and tranquility. The spacious backyard is perfect for outdoor gatherings."
   },
   {
+    "rent": true,
     "address": "Buxton Road",
     "city": "Birmingham",
     "county": "West Midlands",
@@ -52,6 +56,7 @@
     "description": "A spacious family home with a large backyard, perfect for kids and pets. Located in a safe, friendly neighborhood with top-rated schools."
   },
   {
+    "rent": true,
     "address": "Coldbath Road",
     "city": "Birmingham",
     "county": "West Midlands",
@@ -65,6 +70,7 @@
     "description": "This stunning Victorian home combines elegance and modern amenities. Enjoy the beauty of a bygone era with all the comforts of today."
   },
   {
+    "rent": false,
     "address": "Colmers Walk",
     "city": "Birmingham",
     "county": "West Midlands",
@@ -78,6 +84,7 @@
     "description": "A charming cottage with a beautiful garden, perfect for those who love outdoor living. This home exudes warmth and character."
   },
   {
+    "rent": false,
     "address": "Cotterills Avenue",
     "city": "Birmingham",
     "county": "West Midlands",
@@ -91,6 +98,7 @@
     "description": "A modern masterpiece with sleek lines and high-end finishes. This home is an architectural gem, perfect for the design enthusiast."
   },
   {
+    "rent": false,
     "address": "Dolphin Lane",
     "city": "Birmingham",
     "county": "West Midlands",
@@ -104,6 +112,7 @@
     "description": "A spacious family home with a large backyard, perfect for kids and pets. Located in a quiet neighborhood with parks and schools nearby."
   },
   {
+    "rent": false,
     "address": "Downcroft Avenue",
     "city": "Birmingham",
     "county": "West Midlands",
@@ -117,6 +126,7 @@
     "description": "A family-friendly home with a spacious backyard. This property is located in a safe and friendly neighborhood, perfect for kids."
   },
   {
+    "rent": false,
     "address": "Electric Avenue",
     "city": "Birmingham",
     "county": "West Midlands",
@@ -130,6 +140,7 @@
     "description": "A modern family home with sleek design and high-end finishes. This property offers contemporary living at its finest."
   },
   {
+    "rent": false,
     "address": "Factory Road",
     "city": "Birmingham",
     "county": "West Midlands",
