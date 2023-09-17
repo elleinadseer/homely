@@ -63,8 +63,8 @@ const PropertyPage = () => {
           <iframe
             className="map"
             title="property-map"
-            width="650"
-            height="400"
+            width="750"
+            height="500"
             border="0px"
             src={`https://maps.google.com/maps?q=${property.lat},${property.lng}&output=embed`}
           ></iframe>
