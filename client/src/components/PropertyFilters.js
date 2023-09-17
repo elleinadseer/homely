@@ -71,12 +71,12 @@ const PropertyFilter = ({ onFilterChange }) => {
           </button>
           or
           <button
-            className="buy"
+            className="sale"
             name="rent"
             value={false}
             onClick={handleChange}
           >
-            buy
+            sale
           </button>
         </span>
 
