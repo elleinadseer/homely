@@ -30,6 +30,7 @@ const typeDefs = gql`
   }
 
   input PropertyInput {
+    rent: Boolean
     address: String
     city: String
     county: String
