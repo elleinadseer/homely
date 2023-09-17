@@ -56,7 +56,7 @@ const PropertyFilter = ({ onFilterChange }) => {
       <span className="centerPages">
         <span className="inline">
           <button className="rent">rent</button> or
-          <button className="buy">buy</button>
+          <button className="sale">sale</button>
         </span>
 
         <span className="filterContainer">

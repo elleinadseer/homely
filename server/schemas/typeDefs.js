@@ -12,6 +12,7 @@ const typeDefs = gql`
 
   type Property {
     _id: ID
+    rent: Boolean
     address: String
     city: String
     county: String
@@ -29,6 +30,7 @@ const typeDefs = gql`
   }
 
   input PropertyInput {
+    rent: Boolean
     address: String
     city: String
     county: String
@@ -46,6 +48,7 @@ const typeDefs = gql`
   }
 
   input PropertyFilterInput {
+    rent: Boolean
     priceMax: Float
     beds: Int
     baths: Int
