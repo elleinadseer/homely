@@ -61,8 +61,6 @@ const PropertyFilter = ({ onFilterChange }) => {
 
         <span className="filterContainer">
           <span className="filterBox">
-            price
-            <p className="priceSym">£££</p>
             <select
               id="prices"
               name="priceMax"
@@ -71,20 +69,14 @@ const PropertyFilter = ({ onFilterChange }) => {
             >
               {priceOptions.map((option) => (
                 <option key={option} value={option}>
-                  {option === '' ? '-- Prices --' : `£${option}`}
+                  {option === '' ? 'Prices' : `£${option}`}
                 </option>
               ))}
             </select>
+            <p className="priceSym">£££</p>
           </span>
 
           <span className="filterBox">
-            beds
-            <img
-              src="https://imgur.com/bvlccTM.png"
-              height="80"
-              width="80"
-              alt="bed"
-            ></img>
             <select
               id="bedrooms"
               name="beds"
@@ -93,27 +85,26 @@ const PropertyFilter = ({ onFilterChange }) => {
             >
               {bedroomOptions.map((option) => (
                 <option key={option} value={option}>
-                  {option === '' ? '-- Bedrooms --' : `${option}`}
+                  {option === '' ? 'Bedrooms' : `${option}`}
                 </option>
               ))}
             </select>
+            <img
+              src="https://imgur.com/bvlccTM.png"
+              height="80"
+              width="80"
+              alt="bed"
+            ></img>
           </span>
 
           <span className="filterBox">
-            type
-            <img
-              src="https://i.imgur.com/TIlKLdj.png"
-              height="80"
-              width="80"
-              alt="property type"
-            ></img>
             <select
               id="properties"
               name="propertyType"
               onChange={handleChange}
               value={filter.propertyType}
             >
-              <option value="">-- All --</option>
+              <option value="">Property</option>
               {loading ? (
                 <option>Loading...</option>
               ) : error ? (
@@ -126,16 +117,15 @@ const PropertyFilter = ({ onFilterChange }) => {
                 ))
               )}
             </select>
+            <img
+              src="https://i.imgur.com/TIlKLdj.png"
+              height="80"
+              width="80"
+              alt="property type"
+            ></img>
           </span>
 
           <span className="filterBox">
-            bathroom
-            <img
-              src="https://i.imgur.com/J23J5au.png"
-              height="80"
-              width="80"
-              alt="bathrooms"
-            ></img>
             <select
               id="bathroom"
               name="baths"
@@ -144,20 +134,19 @@ const PropertyFilter = ({ onFilterChange }) => {
             >
               {bathroomOptions.map((option) => (
                 <option key={option} value={option}>
-                  {option === '' ? '-- Bathrooms --' : `${option}`}
+                  {option === '' ? 'Bathrooms' : `${option}`}
                 </option>
               ))}
             </select>
+            <img
+              src="https://i.imgur.com/J23J5au.png"
+              height="80"
+              width="80"
+              alt="bathrooms"
+            ></img>
           </span>
 
           <span className="filterBox">
-            pets
-            <img
-              src="https://i.imgur.com/bvR5Faw.png"
-              height="80"
-              width="80"
-              alt="paw"
-            ></img>
             <select
               id="pets"
               name="pets"
@@ -166,10 +155,16 @@ const PropertyFilter = ({ onFilterChange }) => {
                 filter.pets === true ? true : filter.pets === false ? false : ''
               }
             >
-              <option value="">-- Pet-Friendly --</option>
+              <option value="">Pet-Friendly</option>
               <option value={true}>Yes</option>
               <option value={false}>No</option>
             </select>
+            <img
+              src="https://i.imgur.com/bvR5Faw.png"
+              height="80"
+              width="80"
+              alt="paw"
+            ></img>
           </span>
         </span>
       </span>

@@ -53,12 +53,21 @@ const resolvers = {
     },
 
     property: async (_, { _id }) => {
-      const property = await Property.findById(_id)
-      if (!property) {
-        throw new Error('Property not found')
+      try {
+        const property = await Property.findById(_id)
+          .populate('propertyType')
+          .populate('images');
+
+        if (!property) {
+          throw new Error('Property not found');
+        }
+
+        return property;
+      } catch (error) {
+        throw new Error(`Error fetching property: ${error.message}`);
       }
-      return property.populate('propertyType').populate('images')
     },
+    
 
     propertyTypes: async () => {
       return PropertyType.find()

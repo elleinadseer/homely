@@ -53,7 +53,6 @@ function MapContainer() {
         mapContainerStyle={containerStyle}
         onLoad={onLoad}
         onUnmount={onUnmount}
-       
       >
         {data?.properties.map(property => (
     <Marker
