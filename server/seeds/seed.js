@@ -21,28 +21,21 @@ db.once('open', async () => {
     const propertyTypes = await PropertyType.create(propertyTypeSeeds)
     const images = await Image.create(imageSeeds)
 
-    await Property.create(
-      propertySeeds.map((property) => {
-        // Assign a random property type
-        const randomPropertyType =
-          propertyTypes[Math.floor(Math.random() * propertyTypes.length)]._id
+    for (const property of propertySeeds) {
+      // Assign a random property type
+      const randomPropertyType =
+        propertyTypes[Math.floor(Math.random() * propertyTypes.length)]._id;
 
-        // Assign random images
-        const numRandomImages = 1
-        const randomImages = []
-        for (let i = 0; i < numRandomImages; i++) {
-          randomImages.push(
-            images[Math.floor(Math.random() * propertyTypes.length)]._id
-          )
-        }
+      // Randomly select an image and remove it from the available images
+      const randomIndex = Math.floor(Math.random() * images.length);
+      const randomImage = images.splice(randomIndex, 1)[0]._id;
 
-        return {
-          ...property,
-          propertyType: randomPropertyType,
-          images: randomImages, // Assign one random image
-        }
-      })
-    )
+      await Property.create({
+        ...property,
+        propertyType: randomPropertyType,
+        images: [randomImage],
+      });
+    }
   } catch (err) {
     console.error(err)
     process.exit(1)
