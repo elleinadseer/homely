@@ -9,21 +9,27 @@ function Form() {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
+  const [moreDetails, setMoreDetails] = useState(false);
+  const [viewProperty, setViewProperty] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (e) => {
     // Getting the value and name of the input which triggered the change
     const { target } = e;
     const inputType = target.name;
-    const inputValue = target.value;
+    const inputValue = target.type === 'checkbox' ? target.checked : target.value;
 
-    // Based on the input type, we set the state of either email, name
+    // Based on the input type, we set the state
     if (inputType === 'email') {
       setEmail(inputValue);
     } else if (inputType === 'name') {
       setName(inputValue);
-    } else {
+    } else if (inputType === 'message') {
       setMessage(inputValue);
+    } else if (inputType === 'moreDetails') {
+      setMoreDetails(inputValue);
+    } else if (inputType === 'viewProperty') {
+      setViewProperty(inputValue);
     }
   };
 
@@ -34,7 +40,7 @@ function Form() {
     // First we check to see if the email is not valid or if the Name is empty. If so we set an error message to be displayed on the page.
     if (!validateEmail(email) || !name) {
       setErrorMessage('Email or name is invalid');
-      // We want to exit out of this code block if something is wrong so that the  can correct it
+      // We want to exit out of this code block if something is wrong so that the user can correct it
       return;
     }
     alert(`Hello ${name}`);
@@ -43,50 +49,75 @@ function Form() {
     setName('');
     setEmail('');
     setMessage('');
+    setMoreDetails(false);
+    setViewProperty(false);
   };
 
-  // input sections with handleInputChange attached, message box is textarea to allow for multiple lines
   return (
-    <div>      <span className="centerPages">
-      <p><strong>Say Hello {name}</strong></p>
-      <form className="form">
+    <div>
+      <span className="centerPages">
+        <p> <strong>Contact the estate agent</strong> </p>
+        <br></br>
 
-        Email:
-        <input
-          value={email}
-          name="email"
-          onChange={handleInputChange}
-          type="email"
-          placeholder="email"
-        />
+        <span className="checkboxes"><label>
+            <input
+              type="checkbox"
+              name="moreDetails"
+              checked={moreDetails}
+              onChange={handleInputChange}
+            />
+            More details
+          </label>
 
-        Name:
-        <input
-          value={name}
-          name="name"
-          onChange={handleInputChange}
-          type="text"
-          placeholder="name"
-        />
+          <label>
+            <input
+              type="checkbox"
+              name="viewProperty"
+              checked={viewProperty}
+              onChange={handleInputChange}
+            />
+            To view a property
+          </label></span>
+        <form className="form">
+          Email:
+          <input
+            value={email}
+            name="email"
+            onChange={handleInputChange}
+            type="email"
+            placeholder="email"
+          />
 
-        Message: <br></br>
-        <textarea
-          value={message}
-          name="message"
-          onChange={handleInputChange}
-          rows="4"
-          type="textarea"
-          placeholder="message"
-          className='message'
-        /><br></br>
+          Name:
+          <input
+            value={name}
+            name="name"
+            onChange={handleInputChange}
+            type="text"
+            placeholder="name"
+          />
 
-        <button type="button" onClick={handleFormSubmit}>Submit</button>
-      </form>
-      {errorMessage && (
-        <div>
-          <p className="error-text">{errorMessage}</p>
-        </div>
-      )}
+          Message: <br />
+          <textarea
+            value={message}
+            name="message"
+            onChange={handleInputChange}
+            rows="4"
+            type="textarea"
+            placeholder="message"
+            className="message"
+          />
+          <br />
+
+          <button type="button" onClick={handleFormSubmit}>
+            Submit
+          </button>
+        </form>
+        {errorMessage && (
+          <div>
+            <p className="error-text">{errorMessage}</p>
+          </div>
+        )}
       </span>
     </div>
   );
