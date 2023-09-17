@@ -23,7 +23,7 @@ const PropertyList = ({ filter }) => {
             ))}
             </Link >
             <div className="propertyText">
-              <h2>£{property.price}</h2>
+              <h2>£{property.price} {property.rent === true ? 'pcm' : ''}</h2>
               <p>{property.beds} Bedroom {property.propertyType.name} For {property.rent === true ? 'Rent' : 'Sale'}</p>
               {/* <p>{property.beds} Bedroom {property.propertyType.name} For Sale</p> */}
               <p>
