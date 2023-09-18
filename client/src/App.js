@@ -68,7 +68,6 @@ export default function SiteContainer() {
               element={
                 <>
                   <Header />
-                  <PropertyFilter onFilterChange={setFilter} />
                   <Favourites filter={filter} />
                 </>
               }

@@ -71,8 +71,8 @@ const PropertyPage = ({ isLoggedin, filter }) => {
             <img
               key={index}
               src={image.image}
-              height="250"
-              width="400"
+              height="450"
+              width="700"
               alt="property"
             />
           ))
@@ -99,7 +99,7 @@ const PropertyPage = ({ isLoggedin, filter }) => {
           <p>{property.description}</p>
           {isLoggedin ? (
             <button className="saveButton" onClick={handleSaveProperty}>
-              {isSaved ? 'Remove from saved' : 'Save property'}
+              {isSaved ? 'Remove from favourites' : 'Favourite property'}
             </button>
           ) : (
             ''
