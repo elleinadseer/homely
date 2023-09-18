@@ -7,7 +7,7 @@ const typeDefs = gql`
     email: String
     firstName: String
     lastName: String
-    savedProperties: [Property]
+    savedProperties(filter: PropertyFilterInput): [Property]
   }
 
   type Property {

@@ -213,6 +213,44 @@ const resolvers = {
       return image
     },
   },
+
+  User: {
+    savedProperties: async (user, { filter }) => {
+      if (!user) {
+        throw new AuthenticationError('You need to be logged in!')
+      }
+
+      const params = { _id: { $in: user.savedProperties } }
+
+      if (filter) {
+        if (filter.rent !== undefined) {
+          params.rent = filter.rent
+        }
+
+        if (filter.priceMax) {
+          params.price = { $lte: filter.priceMax }
+        }
+
+        if (filter.beds) {
+          params.beds = filter.beds
+        }
+
+        if (filter.baths) {
+          params.baths = filter.baths
+        }
+
+        if (filter.pets !== undefined) {
+          params.pets = filter.pets
+        }
+
+        if (filter.propertyType) {
+          params.propertyType = filter.propertyType
+        }
+      }
+
+      return Property.find(params).populate('propertyType').populate('images')
+    },
+  },
 }
 
 module.exports = resolvers
