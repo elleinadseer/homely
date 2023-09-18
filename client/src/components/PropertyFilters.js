@@ -6,6 +6,10 @@ const PropertyFilter = ({ onFilterChange }) => {
   const [filter, setFilter] = useState({});
   const { loading, error, data } = useQuery(GET_PROPERTY_TYPES);
 
+  const rentPriceOptions = ['Prices', '100', '200', '300', '400', '500', '600', '700', '800', '900', '1000'];
+  const salePriceOptions = ['Prices', '100000', '200000', '300000', '400000', '500000', '600000', '700000', '800000', '900000', '1000000'];
+
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     let newValue;
@@ -30,19 +34,6 @@ const PropertyFilter = ({ onFilterChange }) => {
     onFilterChange({ ...filter, [name]: newValue });
   };
 
-  const priceOptions = [
-    '',
-    '100000',
-    '200000',
-    '300000',
-    '400000',
-    '500000',
-    '600000',
-    '700000',
-    '800000',
-    '900000',
-    '1000000',
-  ];
   const bedroomOptions = ['', '1', '2', '3', '4', '5', '6'];
   const bathroomOptions = ['', '1', '2', '3', '4', '5', '6'];
 
@@ -73,23 +64,32 @@ const PropertyFilter = ({ onFilterChange }) => {
             sale
           </button>
         </span>
+      </span>
 
-        <span className="filterContainer">
-          <span className="filterBox">
-            <select
-              id="prices"
-              name="priceMax"
-              onChange={handleChange}
-              value={filter.priceMax || ''}
-            >
-              {priceOptions.map((option) => (
+      <span className="filterContainer">
+        <span className="filterBox">
+          <select
+            id="prices"
+            name="priceMax"
+            onChange={handleChange}
+            value={filter.priceMax || ''}
+          >
+            {filter.rent ? (
+              rentPriceOptions.map(option => (
                 <option key={option} value={option}>
-                  {option === '' ? 'Prices' : `£${option}`}
+                  {option === '' ? 'Prices' : `${option}`}
                 </option>
-              ))}
-            </select>
-            <p className="priceSym">£££</p>
-          </span>
+              ))
+            ) : (
+              salePriceOptions.map(option => (
+                <option key={option} value={option}>
+                  {option === '' ? 'Prices' : option}
+                </option>
+              ))
+            )}
+          </select>
+          <p className="priceSym">£££</p>
+        </span>
 
           <span className="filterBox">
             <select
@@ -182,7 +182,6 @@ const PropertyFilter = ({ onFilterChange }) => {
             ></img>
           </span>
         </span>
-      </span>
     </div>
   );
 };
