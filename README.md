@@ -1,6 +1,6 @@
 # homely
 
-The application is based around property search where you can look for houses that are available within a area and can choose whether the active searcher is interested on the various properties that are available. In this particular application, you can seek different types of property and it's various features e.g bedroom/bathrooms etc. When the user is able to click on these properties for further information, they will be able to see the location where the property is based in, the description and the market value of the property that is either for rent or sale.
+The application is based around property search solely in Birmingham where you can look for houses that are available within a area and can choose whether the active searcher is interested on the various properties that are available. In this particular application, you can seek different types of property and it's various features e.g bedroom/bathrooms etc. When the user is able to click on these properties for further information, they will be able to see the exact location where the property is based in, the description and the market value of the property that is either for rent or sale.
 
 ## Table of Contents
 - [Development Goals](#development-goals)
