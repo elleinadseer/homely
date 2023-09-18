@@ -81,7 +81,7 @@ function MapContainer() {
 ) : null}
         <></>
       </GoogleMap>
-  ) : <></>
+  ) : <></>    
 }
 
 export default React.memo(MapContainer)
