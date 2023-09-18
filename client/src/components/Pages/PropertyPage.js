@@ -71,8 +71,8 @@ const PropertyPage = ({ isLoggedin, filter }) => {
             <img
               key={index}
               src={image.image}
-              height="250"
-              width="400"
+              height="450"
+              width="700"
               alt="property"
             />
           ))
@@ -80,10 +80,8 @@ const PropertyPage = ({ isLoggedin, filter }) => {
           <p>No images available</p>
         )}
         <div className="propertyPageText">
-          <h2>£{property.price}</h2>
-          <p>
-            {property.beds} Bedroom {property.propertyType.name} For Sale
-          </p>
+        <h2>£{property.price} {property.rent === true ? 'pcm' : ''}</h2>
+          <p>{property.beds} Bedroom {property.propertyType.name} For {property.rent === true ? 'Rent' : 'Sale'}</p>
           <p>
             {property.address}, {property.city}
             <br></br>
@@ -101,7 +99,7 @@ const PropertyPage = ({ isLoggedin, filter }) => {
           <p>{property.description}</p>
           {isLoggedin ? (
             <button className="saveButton" onClick={handleSaveProperty}>
-              {isSaved ? 'Remove from saved' : 'Save property'}
+              {isSaved ? 'Remove from favourites' : 'Favourite property'}
             </button>
           ) : (
             ''
