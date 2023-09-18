@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useQuery, useMutation } from '@apollo/client'
 import { useParams } from 'react-router-dom'
-import { GET_PROPERTY } from '../../utils/queries/propertyQueries.js'
+import { GET_PROPERTY, QUERY_ME } from '../../utils/queries/propertyQueries.js'
 import {
   SAVE_PROPERTY_TO_USER,
   REMOVE_PROPERTY_FROM_USER,
 } from '../../utils/mutations.js'
 import Contact from './Contact'
 
-const PropertyPage = () => {
+const PropertyPage = ({ isLoggedin }) => {
   const { propertyId } = useParams()
 
   const [savePropertyToUser] = useMutation(SAVE_PROPERTY_TO_USER)
@@ -22,6 +22,15 @@ const PropertyPage = () => {
     // pass URL parameter
     variables: { id: propertyId },
   })
+
+  const { data: userData } = useQuery(QUERY_ME)
+
+  useEffect(() => {
+    const savedPropertyIds = userData?.me.savedProperties.map(
+      (property) => property._id
+    )
+    setIsSaved(savedPropertyIds?.includes(propertyId))
+  }, [userData, propertyId])
 
   const handleSaveProperty = async () => {
     try {
@@ -86,9 +95,13 @@ const PropertyPage = () => {
             Bathrooms: {property.baths}
           </span>
           <p>{property.description}</p>
-          <button className="saveButton" onClick={handleSaveProperty}>
-            {isSaved ? 'Remove from saved' : 'Save property'}
-          </button>
+          {isLoggedin ? (
+            <button className="saveButton" onClick={handleSaveProperty}>
+              {isSaved ? 'Remove from saved' : 'Save property'}
+            </button>
+          ) : (
+            ''
+          )}
         </div>
       </div>
 
