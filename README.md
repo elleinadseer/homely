@@ -34,5 +34,6 @@ Additional technologies:
 
 ## Screenshot of App 
 
+![Screenshot 2023-09-18 191430](https://github.com/elleinadseer/homely/assets/129113539/cda3c1d8-fc23-4bfa-9ee7-906997bd9034)
 
 
