@@ -5,7 +5,6 @@ const { Schema } = mongoose
 const propertySchema = new Schema({
   rent: {
     type: Boolean,
-    required: true,
   },
   address: {
     type: String,

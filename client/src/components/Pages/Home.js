@@ -21,6 +21,7 @@ const handleFilterChange = (newFilter) => {
       </span>
       <span className="propertySearchInline">
       <PropertyList filter={filter} />
+      <MapContainer />
       </span>
 
     </>
