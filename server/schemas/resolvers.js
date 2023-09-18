@@ -7,17 +7,26 @@ const resolvers = {
     me: async (_, __, { user }) => {
       if (user) {
         // If a user is authenticated, return their profile
-        return user
+        const userData = await User.findOne({ _id: user._id })
+          .select('-__v -password')
+          .populate({
+            path: 'savedProperties',
+            populate: {
+              path: 'propertyType images',
+            },
+          })
+
+        return userData
       }
       throw new AuthenticationError('Not logged in')
     },
 
     users: async () => {
-      return User.find()
+      return User.find().populate('savedProperties')
     },
 
     user: async (_, { username }) => {
-      const user = await User.findOne({ username })
+      const user = await User.findOne({ username }).populate('savedProperties')
       if (!user) {
         throw new Error('User not found')
       }
@@ -150,7 +159,13 @@ const resolvers = {
           { _id: user._id },
           { $addToSet: { savedProperties: propertyId } },
           { new: true, runValidators: true }
-        )
+        ).populate({
+          path: 'savedProperties',
+          populate: {
+            path: 'propertyType images',
+          },
+        })
+
         return updatedUser
       }
       throw new AuthenticationError('You need to be logged in!')
@@ -162,7 +177,13 @@ const resolvers = {
           { _id: user._id },
           { $pull: { savedProperties: propertyId } },
           { new: true }
-        )
+        ).populate({
+          path: 'savedProperties',
+          populate: {
+            path: 'propertyType images',
+          },
+        })
+
         return updatedUser
       }
       throw new AuthenticationError('You need to be logged in!')
@@ -190,6 +211,44 @@ const resolvers = {
       // Remove an image
       const image = await Image.findByIdAndRemove(imageId)
       return image
+    },
+  },
+
+  User: {
+    savedProperties: async (user, { filter }) => {
+      if (!user) {
+        throw new AuthenticationError('You need to be logged in!')
+      }
+
+      const params = { _id: { $in: user.savedProperties } }
+
+      if (filter) {
+        if (filter.rent !== undefined) {
+          params.rent = filter.rent
+        }
+
+        if (filter.priceMax) {
+          params.price = { $lte: filter.priceMax }
+        }
+
+        if (filter.beds) {
+          params.beds = filter.beds
+        }
+
+        if (filter.baths) {
+          params.baths = filter.baths
+        }
+
+        if (filter.pets !== undefined) {
+          params.pets = filter.pets
+        }
+
+        if (filter.propertyType) {
+          params.propertyType = filter.propertyType
+        }
+      }
+
+      return Property.find(params).populate('propertyType').populate('images')
     },
   },
 }

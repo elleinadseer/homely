@@ -3,6 +3,7 @@ import { GoogleMap, InfoWindow, Marker, useJsApiLoader } from '@react-google-map
 import { useQuery } from '@apollo/client';
 import { GET_PROPERTIES } from '../utils/queries/propertyQueries.js';
 
+
 const containerStyle = {
   width: '40%',
   height: '600px',
@@ -15,13 +16,13 @@ const center = {
 };
 
 function MapContainer() {
-    const apiKey = process.env.GOOGLE_API_KEY; // Load from .env
+    const apiKey = process.env.REACT_APP_GOOGLE_API_KEY; // Load from .env
 
     const { loading, error, data } = useQuery(GET_PROPERTIES);
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyDOH5aCAqK0mJpNGMsFQQb8JAiBp6zf36A"
+    googleMapsApiKey: apiKey
   })
 
   const [map, setMap] = React.useState(null);
@@ -68,10 +69,13 @@ function MapContainer() {
     setSelectedProperty(null);
   }}
   ><>
-    <h1>£{selectedProperty.price}</h1>
+    <h1>£{selectedProperty.price} For {selectedProperty.rent === true ? 'Rent' : 'Sale'}</h1>
     <h1>{selectedProperty.address}</h1>
     <h1>🛏️:{selectedProperty.beds}</h1>
     <h1>🛀:{selectedProperty.baths}</h1>
+    <h1>🐾:{selectedProperty.pets === true ? 'Yes' : 'No'}</h1>
+    <a href = {`localhost:3000/property/${selectedProperty._id}`}>More info...</a>
+    
   </>
   </InfoWindow>
 ) : null}
