@@ -17,6 +17,7 @@ import Favourites from './components/Pages/Favourites';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+
 const client = new ApolloClient({
   uri: '/graphql',
   cache: new InMemoryCache(),
