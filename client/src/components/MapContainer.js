@@ -3,6 +3,7 @@ import { GoogleMap, InfoWindow, Marker, useJsApiLoader } from '@react-google-map
 import { useQuery } from '@apollo/client';
 import { GET_PROPERTIES } from '../utils/queries/propertyQueries.js';
 
+
 const containerStyle = {
   width: '40%',
   height: '600px',
@@ -15,7 +16,8 @@ const center = {
 };
 
 function MapContainer() {
-    const apiKey = process.env.GOOGLE_API_KEY; // Load from .env
+    const apiKey = process.env.REACT_APP_GOOGLE_API_KEY; // Load from .env
+   console.log(process.env.REACT_APP_GOOGLE_API_KEY);
 
     const { loading, error, data } = useQuery(GET_PROPERTIES);
 
