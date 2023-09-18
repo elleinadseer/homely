@@ -1,14 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import Auth from '../utils/auth';
+import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
+import Auth from '../utils/auth'
 
 export default function Header() {
-  const isLoggedin = Auth.loggedIn();
+  const isLoggedin = Auth.loggedIn()
 
   const handleLogout = (event) => {
-    event.preventDefault();
-    Auth.logout();
-  };
+    event.preventDefault()
+    Auth.logout()
+  }
+
+  const location = useLocation()
 
   return (
     <div>
@@ -19,8 +21,12 @@ export default function Header() {
         <div className="signLogLinks">
           {isLoggedin ? (
             <>
-              <Link to="/favourites">Favorites</Link> |{' '}
-              <Link onClick={handleLogout}>Log out</Link>
+              {location.pathname === '/favourites' ? (
+                <Link to="/">Home</Link>
+              ) : (
+                <Link to="/favourites">Favourites</Link>
+              )}{' '}
+              | <Link onClick={handleLogout}>Log out</Link>
             </>
           ) : (
             <>
@@ -31,5 +37,5 @@ export default function Header() {
         </div>
       </span>
     </div>
-  );
+  )
 }
