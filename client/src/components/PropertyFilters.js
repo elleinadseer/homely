@@ -12,13 +12,7 @@ const PropertyFilter = ({ onFilterChange }) => {
 
     if (name === 'priceMax' || name === 'beds' || name === 'baths') {
       newValue = parseFloat(value);
-    } else if (name === 'pets') {
-      value === 'true'
-        ? (newValue = true)
-        : value === 'false'
-        ? (newValue = false)
-        : (newValue = undefined);
-    } else if (name === 'rent') {
+    } else if (name === 'pets' || name === 'rent') {
       value === 'true'
         ? (newValue = true)
         : value === 'false'
