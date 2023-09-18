@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
+
 import Auth from './utils/auth';
 
 import Header from './components/Header';
@@ -11,6 +11,7 @@ import Signup from './components/Pages/Signup';
 
 import PropertyPage from './components/Pages/PropertyPage';
 import Home from './components/Pages/Home';
+import PropertyFilter from './components/PropertyFilters';
 
 import Favourites from './components/Pages/Favourites';
 
@@ -23,6 +24,8 @@ const client = new ApolloClient({
     authorization: Auth.getToken() || '',
   },
 });
+
+const isLoggedin = Auth.loggedIn();
 
 export default function SiteContainer() {
   const [filter, setFilter] = useState({});
@@ -56,7 +59,7 @@ export default function SiteContainer() {
               element={
                 <>
                   <Header />
-                  <PropertyPage />
+                  <PropertyPage isLoggedin={isLoggedin} />
                 </>
               }
             />
@@ -65,7 +68,8 @@ export default function SiteContainer() {
               element={
                 <>
                   <Header />
-                  <Favourites />
+                  <PropertyFilter onFilterChange={setFilter} />
+                  <Favourites filter={filter} />
                 </>
               }
             />

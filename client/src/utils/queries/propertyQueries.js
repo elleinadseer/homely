@@ -69,14 +69,14 @@ export const GET_PROPERTY_TYPES = gql`
 `;
 
 export const QUERY_ME = gql`
-  query me {
+  query me($filter: PropertyFilterInput) {
     me {
       _id
       username
       email
       firstName
       lastName
-      savedProperties {
+      savedProperties(filter: $filter) {
         _id
         rent
         address

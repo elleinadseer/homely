@@ -3,19 +3,21 @@ import { useQuery } from '@apollo/client'
 import { QUERY_ME } from '../../utils/queries/propertyQueries'
 import { Link } from 'react-router-dom'
 
-const FavoritesPage = () => {
-  // Use the GraphQL query to fetch the user's favorite properties
-  const { loading, error, data } = useQuery(QUERY_ME)
+const FavouritesPage = ({ filter }) => {
+  // Use the GraphQL query to fetch the user's favourite properties
+  const { loading, error, data } = useQuery(QUERY_ME, {
+    variables: { filter },
+  })
 
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error.message}</p>
 
-  const favoriteProperties = data.me.savedProperties
+  const favouriteProperties = data.me.savedProperties
 
   return (
     <div className="propertyListings">
-      {/* Display the user's favorite properties */}
-      {favoriteProperties.map((property) => (
+      {/* Display the user's favourite properties */}
+      {favouriteProperties.map((property) => (
         <div key={property._id}>
           {/* Display property details as needed */}
           <div className="PropertyTile">
@@ -58,4 +60,4 @@ const FavoritesPage = () => {
   )
 }
 
-export default FavoritesPage
+export default FavouritesPage
