@@ -19,7 +19,7 @@ export default function Header() {
         <div className="signLogLinks">
           {isLoggedin ? (
             <>
-              <Link to="/favorites">Favorites</Link> |{' '}
+              <Link to="/favourites">Favorites</Link> |{' '}
               <Link onClick={handleLogout}>Log out</Link>
             </>
           ) : (
