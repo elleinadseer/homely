@@ -1,23 +1,27 @@
 # homely
 
-The application is based around property search where you can look for houses that are available within a area and can choose whether the active searcher can rent a property or buy it. In this particular application, you can seek different types of property and it's various features e.g bedroom/bathrooms etc. When the user is able to click on these properties for further information, they will be able to see the location where the property is based in, the description and the market value of the property that is either for rent or sale.
+The application is based around property search where you can look for houses that are available within a area and can choose whether the active searcher is interested on the various properties that are available. In this particular application, you can seek different types of property and it's various features e.g bedroom/bathrooms etc. When the user is able to click on these properties for further information, they will be able to see the location where the property is based in, the description and the market value of the property that is either for rent or sale.
 
 ## Table of Contents
 - [Development Goals](#development-goals)
 - [Featured Technologies](#featured-technologies)
 - [Screenshot of App](#screenshot-of-app)
+- [Deployed Application](#deployed-application)
+
 
 ## Development Goals
 
 User Story:
 GIVEN a property based website
-- WHEN a user logs into the website
-- THEN they are able to see based property around an area
+- WHEN a user opens the website
+THEN they are able to see based property around an specific area 
+- WHEN a user logs or signs up in the website
+THEN they are able to put a property they like into their list of favourites
 
 Acceptance Criteria:
-- WHEN a user clicks on a desired property they like 
-THEN they are able to save the property and it saves within a basket
-- WHEN a user desires to rent or purchase a property
+- WHEN a user clicks on the favourites section
+THEN they are able to look at the properties they have favourited previously
+- WHEN a user would like more information on a property that is for rent or sale
 THEN they are taken to a section where they can contact an estate agent for further information
 
 ## Featured Technologies
@@ -36,4 +40,6 @@ Additional technologies:
 
 ![Screenshot 2023-09-18 191430](https://github.com/elleinadseer/homely/assets/129113539/cda3c1d8-fc23-4bfa-9ee7-906997bd9034)
 
+## Deployed Application
 
+[App on Heroku](https://homely-property-c3c0a3f65d87.herokuapp.com)
