@@ -17,7 +17,6 @@ const center = {
 
 function MapContainer() {
     const apiKey = process.env.REACT_APP_GOOGLE_API_KEY; // Load from .env
-   console.log(process.env.REACT_APP_GOOGLE_API_KEY);
 
     const { loading, error, data } = useQuery(GET_PROPERTIES);
 
@@ -70,10 +69,12 @@ function MapContainer() {
     setSelectedProperty(null);
   }}
   ><>
-    <h1>£{selectedProperty.price}</h1>
+    <h1>£{selectedProperty.price} For {selectedProperty.rent === true ? 'Rent' : 'Sale'}</h1>
     <h1>{selectedProperty.address}</h1>
     <h1>🛏️:{selectedProperty.beds}</h1>
     <h1>🛀:{selectedProperty.baths}</h1>
+    <h1>🐾:{selectedProperty.pets === true ? 'Yes' : 'No'}</h1>
+    <a href = {`localhost:3000/property/${selectedProperty._id}`}>More info...</a>
     
   </>
   </InfoWindow>
