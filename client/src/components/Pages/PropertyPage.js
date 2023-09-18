@@ -8,7 +8,7 @@ import {
 } from '../../utils/mutations.js'
 import Contact from './Contact'
 
-const PropertyPage = ({ isLoggedin }) => {
+const PropertyPage = ({ isLoggedin, filter }) => {
   const { propertyId } = useParams()
 
   const [savePropertyToUser] = useMutation(SAVE_PROPERTY_TO_USER)
@@ -23,7 +23,9 @@ const PropertyPage = ({ isLoggedin }) => {
     variables: { id: propertyId },
   })
 
-  const { data: userData } = useQuery(QUERY_ME)
+  const { data: userData, refetch } = useQuery(QUERY_ME, {
+    variables: { filter: filter },
+  })
 
   useEffect(() => {
     const savedPropertyIds = userData?.me.savedProperties.map(
@@ -45,6 +47,8 @@ const PropertyPage = ({ isLoggedin }) => {
           variables: { propertyId },
         })
       }
+      await refetch()
+
       setIsSaved(!isSaved) // Toggle the saved state
     } catch (err) {
       console.error(err)

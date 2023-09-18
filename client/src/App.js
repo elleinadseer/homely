@@ -59,7 +59,7 @@ export default function SiteContainer() {
               element={
                 <>
                   <Header />
-                  <PropertyPage isLoggedin={isLoggedin} />
+                  <PropertyPage isLoggedin={isLoggedin} filter={filter} />
                 </>
               }
             />
