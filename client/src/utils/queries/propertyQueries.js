@@ -67,3 +67,37 @@ export const GET_PROPERTY_TYPES = gql`
     }
   }
 `;
+
+export const QUERY_ME = gql`
+  query me($filter: PropertyFilterInput) {
+    me {
+      _id
+      username
+      email
+      firstName
+      lastName
+      savedProperties(filter: $filter) {
+        _id
+        rent
+        address
+        city
+        county
+        postcode
+        lat
+        lng
+        price
+        beds
+        baths
+        pets
+        dateListed
+        propertyType {
+          name
+        }
+        description
+        images {
+          image
+        }
+      }
+    }
+  }
+`;
