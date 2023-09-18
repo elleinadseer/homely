@@ -72,13 +72,12 @@ function MapContainer() {
     <h1>{selectedProperty.address}</h1>
     <h1>🛏️:{selectedProperty.beds}</h1>
     <h1>🛀:{selectedProperty.baths}</h1>
-    
   </>
   </InfoWindow>
 ) : null}
         <></>
       </GoogleMap>
-  ) : <></>
+  ) : <></>    
 }
 
 export default React.memo(MapContainer)
