@@ -2,7 +2,7 @@ import React from 'react';
 import { GoogleMap, InfoWindow, Marker, useJsApiLoader } from '@react-google-maps/api';
 import { useQuery } from '@apollo/client';
 import { GET_PROPERTIES } from '../utils/queries/propertyQueries.js';
-
+import { Link } from 'react-router-dom';
 
 const containerStyle = {
   width: '40%',
@@ -74,7 +74,7 @@ function MapContainer() {
     <h1>🛏️:{selectedProperty.beds}</h1>
     <h1>🛀:{selectedProperty.baths}</h1>
     <h1>🐾:{selectedProperty.pets === true ? 'Yes' : 'No'}</h1>
-    <a href = {`localhost:3000/property/${selectedProperty._id}`}>More info...</a>
+    <Link to={`/property/${selectedProperty._id}`}> More info... </Link >
     
   </>
   </InfoWindow>
