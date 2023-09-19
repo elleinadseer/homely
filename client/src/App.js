@@ -68,7 +68,10 @@ export default function SiteContainer() {
               path="/favourites"
               element={
                 <>
+                <span className="headerSearchInline">
                   <Header />
+                  <PropertyFilter onFilterChange={setFilter} />
+                  </span>
                   <Favourites filter={filter} />
                 </>
               }

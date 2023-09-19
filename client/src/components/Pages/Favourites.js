@@ -15,7 +15,7 @@ const FavouritesPage = ({ filter }) => {
   const favouriteProperties = data.me.savedProperties
 
   return (
-    <div className="propertyListings">
+    <div className="favouriteListings">
       {/* Display the user's favourite properties */}
       {favouriteProperties.map((property) => (
         <div key={property._id}>
