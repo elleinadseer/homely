@@ -6,7 +6,7 @@ const PropertyFilter = ({ onFilterChange }) => {
   const [filter, setFilter] = useState({});
   const { loading, error, data } = useQuery(GET_PROPERTY_TYPES);
 
-  const rentPriceOptions = ['Prices', '100', '200', '300', '400', '500', '600', '700', '800', '900', '1000'];
+  const rentPriceOptions = ['Prices', '600', '700', '800', '900', '1100', '1200', '1300', '1400', '1500', '1600', '1700', '1800', '1900', '2000'];
   const salePriceOptions = ['Prices', '100000', '200000', '300000', '400000', '500000', '600000', '700000', '800000', '900000', '1000000'];
 
 
