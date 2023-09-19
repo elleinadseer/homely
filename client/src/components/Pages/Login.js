@@ -3,6 +3,7 @@ import { useMutation } from '@apollo/client';
 import { LOGIN } from '../../utils/mutations';
 import Auth from '../../utils/auth';
 
+// handles login validation to see if email & password matches the user details
 function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error }] = useMutation(LOGIN);
@@ -10,9 +11,11 @@ function Login(props) {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
+      // Uses GraphQL mutation for user login
       const mutationResponse = await login({
         variables: { email: formState.email, password: formState.password },
       });
+      // if login is successful, user token is taken from local storage to allow user to log in
       const token = mutationResponse.data.login.token;
       Auth.login(token);
     } catch (e) {

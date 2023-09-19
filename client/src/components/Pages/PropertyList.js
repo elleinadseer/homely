@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { GET_PROPERTIES } from '../../utils/queries/propertyQueries.js';
 
+// Gets property data from query in GraphQL
 const PropertyList = ({ filter }) => {
   console.log('Received filter in PropertyList:', filter);
   const { loading, error, data } = useQuery(GET_PROPERTIES, {

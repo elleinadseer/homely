@@ -5,14 +5,17 @@ import MapContainer from '../MapContainer';
 import PropertyFilter from '../PropertyFilters';
 import Header from '../Header';
 
+// creating variables for state to filter different types of property
 const Home = () => {
   const [filter, setFilter] = useState({});
-
+   
+  // helps update the filter changes from the current filter value
   const handleFilterChange = (newFilter) => {
     setFilter(newFilter);
   };
 
   return (
+    // part that renders onto the page with filter changes
     <>
       <span className="headerSearchInline">
         <Header />

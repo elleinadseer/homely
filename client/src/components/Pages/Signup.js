@@ -3,12 +3,14 @@ import { useMutation } from '@apollo/client';
 import Auth from '../../utils/auth';
 import { ADD_USER } from '../../utils/mutations';
 
+// handles sign-up validation to see if email & password matches validation details
 function Signup(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [addUser] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    // Uses GraphQL mutation for adding a user and signing up
     const mutationResponse = await addUser({
       variables: {
         email: formState.email,
@@ -18,6 +20,7 @@ function Signup(props) {
         lastName: formState.lastName,
       },
     });
+    // if login is successful, user token is added to allow user to sign up
     const token = mutationResponse.data.addUser.token;
     Auth.login(token);
   };
