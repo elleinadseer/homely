@@ -6,24 +6,22 @@ import PropertyFilter from '../PropertyFilters';
 import Header from '../Header';
 
 const Home = () => {
-
   const [filter, setFilter] = useState({});
 
-const handleFilterChange = (newFilter) => {
-  setFilter(newFilter);
-};
+  const handleFilterChange = (newFilter) => {
+    setFilter(newFilter);
+  };
 
   return (
     <>
       <span className="headerSearchInline">
-      <Header />
-      <PropertyFilter onFilterChange={handleFilterChange} />
+        <Header />
+        <PropertyFilter onFilterChange={handleFilterChange} />
       </span>
       <span className="propertySearchInline">
-      <PropertyList filter={filter} />
-      <MapContainer />
+        <PropertyList filter={filter} />
+        <MapContainer filter={filter} />
       </span>
-
     </>
   );
 };
