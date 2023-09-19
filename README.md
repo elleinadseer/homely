@@ -31,14 +31,17 @@ The technologies involved within the process of making the app include:
 - React
 - JavaScript
 - CSS
-
-Additional technologies:
+  
+ Additional technologies:
 - Google Map API
 - MongoDB & Mongoose
+- GraphQL
+- JWT authentication 
+- Heroku deployment
 
 ## Screenshot of App 
 
-![Screenshot 2023-09-18 191430](https://github.com/elleinadseer/homely/assets/129113539/cda3c1d8-fc23-4bfa-9ee7-906997bd9034)
+![Screenshot 2023-09-19 at 4 18 13 pm](https://github.com/elleinadseer/homely/assets/126515415/9eafb7c1-9929-4956-b334-86eaba06b6e2)
 
 ## Deployed Application
 
