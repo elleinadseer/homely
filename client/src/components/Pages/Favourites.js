@@ -1,13 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useQuery } from '@apollo/client'
 import { QUERY_ME } from '../../utils/queries/propertyQueries'
 import { Link } from 'react-router-dom'
 
-const FavouritesPage = ({ filter }) => {
+const FavouritesPage = ({ filter, setFilter }) => {
   // Use the GraphQL query to fetch the user's favourite properties
   const { loading, error, data } = useQuery(QUERY_ME, {
     variables: { filter },
   })
+
+  useEffect(() => {
+    return () => {
+      setFilter({}) // Clear the filter when the component unmounts
+    }
+  }, [])
 
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error.message}</p>
